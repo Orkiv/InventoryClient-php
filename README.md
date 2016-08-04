@@ -21,7 +21,7 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
   "repositories": [
     {
       "type": "git",
-      "url": "https://github.com//.git"
+      "url": "https://github.com//Orkiv/InventoryClient-php.git"
     }
   ],
   "require": {
