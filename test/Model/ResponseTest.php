@@ -5,14 +5,14 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  InventoryClient
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
 /**
- * Orkiv Inventory API
+ * InventoryAPI
  *
  * Orkiv Inventory API client
  *
@@ -39,7 +39,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace Swagger\Client;
+namespace InventoryClient;
 
 /**
  * ResponseTest Class Doc Comment
@@ -47,7 +47,7 @@ namespace Swagger\Client;
  * @category    Class */
 // * @description Response
 /**
- * @package     Swagger\Client
+ * @package     InventoryClient
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen

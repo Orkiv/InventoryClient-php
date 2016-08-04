@@ -1,4 +1,4 @@
-# Swagger\Client\DefaultApi
+# InventoryClient\DefaultApi
 
 All URIs are relative to *https://www.orkiv.com/i/api*
 
@@ -37,15 +37,15 @@ Method | HTTP request | Description
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: APIKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
 // Configure API key authorization: AccountID
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\DefaultApi();
+$api_instance = new InventoryClient\Api\DefaultApi();
 
 try {
     $result = $api_instance->allGet();
@@ -85,15 +85,15 @@ This endpoint does not need any parameter.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: APIKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
 // Configure API key authorization: AccountID
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\DefaultApi();
+$api_instance = new InventoryClient\Api\DefaultApi();
 $id = "id_example"; // string | Id of category to remove
 
 try {
@@ -137,15 +137,15 @@ Name | Type | Description  | Notes
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: APIKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
 // Configure API key authorization: AccountID
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\DefaultApi();
+$api_instance = new InventoryClient\Api\DefaultApi();
 $query = new \Swagger\Client\Model\Dictionary(); // \Swagger\Client\Model\Dictionary | Category to query against system
 
 try {
@@ -191,15 +191,15 @@ If no ID is specified a new category will be created!
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: APIKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
 // Configure API key authorization: AccountID
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\DefaultApi();
+$api_instance = new InventoryClient\Api\DefaultApi();
 $id = "id_example"; // string | category id to update.
 $category = new \Swagger\Client\Model\Category(); // \Swagger\Client\Model\Category | New category information.
 
@@ -245,15 +245,15 @@ Name | Type | Description  | Notes
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: APIKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
 // Configure API key authorization: AccountID
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\DefaultApi();
+$api_instance = new InventoryClient\Api\DefaultApi();
 $item = new \Swagger\Client\Model\Item(); // \Swagger\Client\Model\Item | Item to create.
 
 try {
@@ -297,15 +297,15 @@ Name | Type | Description  | Notes
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: APIKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
 // Configure API key authorization: AccountID
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\DefaultApi();
+$api_instance = new InventoryClient\Api\DefaultApi();
 $items = array(new Item()); // \Swagger\Client\Model\Item[] | Items to create.
 
 try {
@@ -349,15 +349,15 @@ Name | Type | Description  | Notes
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: APIKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
 // Configure API key authorization: AccountID
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\DefaultApi();
+$api_instance = new InventoryClient\Api\DefaultApi();
 $id = "id_example"; // string | item id to remove
 
 try {
@@ -401,15 +401,15 @@ Name | Type | Description  | Notes
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: APIKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
 // Configure API key authorization: AccountID
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\DefaultApi();
+$api_instance = new InventoryClient\Api\DefaultApi();
 $id = "id_example"; // string | item id to update.
 $item = new \Swagger\Client\Model\Dictionary(); // \Swagger\Client\Model\Dictionary | New item information.
 
@@ -455,15 +455,15 @@ Name | Type | Description  | Notes
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: APIKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
 // Configure API key authorization: AccountID
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\DefaultApi();
+$api_instance = new InventoryClient\Api\DefaultApi();
 $query = new \Swagger\Client\Model\Dictionary(); // \Swagger\Client\Model\Dictionary | Item to query against system.
 
 try {
@@ -507,15 +507,15 @@ Name | Type | Description  | Notes
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: APIKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
 // Configure API key authorization: AccountID
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\DefaultApi();
+$api_instance = new InventoryClient\Api\DefaultApi();
 $query = new \Swagger\Client\Model\Dictionary(); // \Swagger\Client\Model\Dictionary | Item to query against system.
 
 try {
@@ -559,15 +559,15 @@ Name | Type | Description  | Notes
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: APIKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
 // Configure API key authorization: AccountID
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\DefaultApi();
+$api_instance = new InventoryClient\Api\DefaultApi();
 $query = new \Swagger\Client\Model\Dictionary(); // \Swagger\Client\Model\Dictionary | Item to query against system.
 
 try {
@@ -611,15 +611,15 @@ Name | Type | Description  | Notes
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: APIKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
 // Configure API key authorization: AccountID
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\DefaultApi();
+$api_instance = new InventoryClient\Api\DefaultApi();
 $query = new \Swagger\Client\Model\Dictionary(); // \Swagger\Client\Model\Dictionary | Order to query against system.
 
 try {
@@ -663,15 +663,15 @@ Name | Type | Description  | Notes
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: APIKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
 // Configure API key authorization: AccountID
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\DefaultApi();
+$api_instance = new InventoryClient\Api\DefaultApi();
 $page = 3.4; // float | Current page index.
 $categoryid = "categoryid_example"; // string | Get items under specified category id.
 $sort = "sort_example"; // string | Comma delimited Sort string. ie ; +ordprice. Please use number based fields only
@@ -727,15 +727,15 @@ Name | Type | Description  | Notes
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: APIKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
 // Configure API key authorization: AccountID
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\DefaultApi();
+$api_instance = new InventoryClient\Api\DefaultApi();
 $page = 3.4; // float | Current page index.
 $categoryid = "categoryid_example"; // string | Get items under specified category id.
 $sort = "sort_example"; // string | Comma delimited Sort string. ie ; +ordprice. Please use number based fields only
@@ -791,15 +791,15 @@ Name | Type | Description  | Notes
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: APIKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
 // Configure API key authorization: AccountID
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\DefaultApi();
+$api_instance = new InventoryClient\Api\DefaultApi();
 $id = "id_example"; // string | ID of the service to update
 
 try {
@@ -843,15 +843,15 @@ Name | Type | Description  | Notes
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: APIKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
 // Configure API key authorization: AccountID
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\DefaultApi();
+$api_instance = new InventoryClient\Api\DefaultApi();
 
 try {
     $result = $api_instance->servicesGet();
@@ -891,15 +891,15 @@ This endpoint does not need any parameter.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: APIKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
 // Configure API key authorization: AccountID
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\DefaultApi();
+$api_instance = new InventoryClient\Api\DefaultApi();
 $service = new \Swagger\Client\Model\Service(); // \Swagger\Client\Model\Service | Service to create.
 
 try {
@@ -943,15 +943,15 @@ Name | Type | Description  | Notes
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: APIKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
 // Configure API key authorization: AccountID
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\DefaultApi();
+$api_instance = new InventoryClient\Api\DefaultApi();
 $id = "id_example"; // string | ID of the service to update
 $service = new \Swagger\Client\Model\Service(); // \Swagger\Client\Model\Service | New service data to set.
 
@@ -997,15 +997,15 @@ Name | Type | Description  | Notes
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: APIKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
 // Configure API key authorization: AccountID
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\DefaultApi();
+$api_instance = new InventoryClient\Api\DefaultApi();
 $id = "id_example"; // string | Will delete event attached to this serviceid
 
 try {
@@ -1051,15 +1051,15 @@ Will ovveride the current event of the specified service.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: APIKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('APIKey', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('APIKey', 'Bearer');
 // Configure API key authorization: AccountID
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
+InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('accountid', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
+// InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\DefaultApi();
+$api_instance = new InventoryClient\Api\DefaultApi();
 $event_request = new \Swagger\Client\Model\EventRequest(); // \Swagger\Client\Model\EventRequest | Event to upload
 
 try {

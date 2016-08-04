@@ -1,5 +1,5 @@
 {
-    "name": "/",
+    "name": "Orkiv/InventoryClient-php",
     "description": "",
     "keywords": [
         "swagger",
@@ -27,9 +27,9 @@
         "squizlabs/php_codesniffer": "~2.6"
     },
     "autoload": {
-        "psr-4": { "Swagger\\Client\\" : "lib/" }
+        "psr-4": { "InventoryClient\\" : "lib/" }
     },
     "autoload-dev": {
-        "psr-4": { "Swagger\\Client\\" : "test/" }
+        "psr-4": { "InventoryClient\\" : "test/" }
     }
 }
