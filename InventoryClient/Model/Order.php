@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace InventoryClient\Model;
 
 use \ArrayAccess;
 

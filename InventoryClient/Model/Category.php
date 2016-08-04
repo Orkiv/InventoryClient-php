@@ -1,6 +1,6 @@
 <?php
 /**
- * Item
+ * Category
  *
  * PHP version 5
  *
@@ -39,12 +39,12 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace InventoryClient\Model;
 
 use \ArrayAccess;
 
 /**
- * Item Class Doc Comment
+ * Category Class Doc Comment
  *
  * @category    Class */
 /** 
@@ -53,28 +53,22 @@ use \ArrayAccess;
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class Item implements ArrayAccess
+class Category implements ArrayAccess
 {
     /**
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'Item';
+    protected static $swaggerModelName = 'Category';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = array(
-        'id' => 'string',
-        'category' => 'string',
-        'desc' => 'string',
         'name' => 'string',
-        'ordprice' => 'float',
-        'price' => 'string',
-        'quantity' => 'string',
-        'media' => 'string[]',
-        'buy' => 'string'
+        'id' => 'string',
+        'parent' => 'string'
     );
 
     public static function swaggerTypes()
@@ -87,15 +81,9 @@ class Item implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = array(
-        'id' => 'id',
-        'category' => 'category',
-        'desc' => 'desc',
         'name' => 'name',
-        'ordprice' => 'ordprice',
-        'price' => 'price',
-        'quantity' => 'quantity',
-        'media' => 'media',
-        'buy' => 'Buy'
+        'id' => 'id',
+        'parent' => 'parent'
     );
 
     public static function attributeMap()
@@ -108,15 +96,9 @@ class Item implements ArrayAccess
      * @var string[]
      */
     protected static $setters = array(
-        'id' => 'setId',
-        'category' => 'setCategory',
-        'desc' => 'setDesc',
         'name' => 'setName',
-        'ordprice' => 'setOrdprice',
-        'price' => 'setPrice',
-        'quantity' => 'setQuantity',
-        'media' => 'setMedia',
-        'buy' => 'setBuy'
+        'id' => 'setId',
+        'parent' => 'setParent'
     );
 
     public static function setters()
@@ -129,15 +111,9 @@ class Item implements ArrayAccess
      * @var string[]
      */
     protected static $getters = array(
-        'id' => 'getId',
-        'category' => 'getCategory',
-        'desc' => 'getDesc',
         'name' => 'getName',
-        'ordprice' => 'getOrdprice',
-        'price' => 'getPrice',
-        'quantity' => 'getQuantity',
-        'media' => 'getMedia',
-        'buy' => 'getBuy'
+        'id' => 'getId',
+        'parent' => 'getParent'
     );
 
     public static function getters()
@@ -161,15 +137,9 @@ class Item implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['category'] = isset($data['category']) ? $data['category'] : null;
-        $this->container['desc'] = isset($data['desc']) ? $data['desc'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['ordprice'] = isset($data['ordprice']) ? $data['ordprice'] : null;
-        $this->container['price'] = isset($data['price']) ? $data['price'] : null;
-        $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
-        $this->container['media'] = isset($data['media']) ? $data['media'] : null;
-        $this->container['buy'] = isset($data['buy']) ? $data['buy'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['parent'] = isset($data['parent']) ? $data['parent'] : null;
     }
 
     /**
@@ -196,69 +166,6 @@ class Item implements ArrayAccess
 
 
     /**
-     * Gets id
-     * @return string
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     * @param string $id ID of item
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets category
-     * @return string
-     */
-    public function getCategory()
-    {
-        return $this->container['category'];
-    }
-
-    /**
-     * Sets category
-     * @param string $category Category ID of item
-     * @return $this
-     */
-    public function setCategory($category)
-    {
-        $this->container['category'] = $category;
-
-        return $this;
-    }
-
-    /**
-     * Gets desc
-     * @return string
-     */
-    public function getDesc()
-    {
-        return $this->container['desc'];
-    }
-
-    /**
-     * Sets desc
-     * @param string $desc Rich text description of item
-     * @return $this
-     */
-    public function setDesc($desc)
-    {
-        $this->container['desc'] = $desc;
-
-        return $this;
-    }
-
-    /**
      * Gets name
      * @return string
      */
@@ -269,7 +176,7 @@ class Item implements ArrayAccess
 
     /**
      * Sets name
-     * @param string $name Name of item
+     * @param string $name Name of category
      * @return $this
      */
     public function setName($name)
@@ -280,106 +187,43 @@ class Item implements ArrayAccess
     }
 
     /**
-     * Gets ordprice
-     * @return float
-     */
-    public function getOrdprice()
-    {
-        return $this->container['ordprice'];
-    }
-
-    /**
-     * Sets ordprice
-     * @param float $ordprice Integer value of price
-     * @return $this
-     */
-    public function setOrdprice($ordprice)
-    {
-        $this->container['ordprice'] = $ordprice;
-
-        return $this;
-    }
-
-    /**
-     * Gets price
+     * Gets id
      * @return string
      */
-    public function getPrice()
+    public function getId()
     {
-        return $this->container['price'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets price
-     * @param string $price String value of price
+     * Sets id
+     * @param string $id ID of category
      * @return $this
      */
-    public function setPrice($price)
+    public function setId($id)
     {
-        $this->container['price'] = $price;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets quantity
+     * Gets parent
      * @return string
      */
-    public function getQuantity()
+    public function getParent()
     {
-        return $this->container['quantity'];
+        return $this->container['parent'];
     }
 
     /**
-     * Sets quantity
-     * @param string $quantity Inventory quantity
+     * Sets parent
+     * @param string $parent ID of parent element. Top level categories are set to root.
      * @return $this
      */
-    public function setQuantity($quantity)
+    public function setParent($parent)
     {
-        $this->container['quantity'] = $quantity;
-
-        return $this;
-    }
-
-    /**
-     * Gets media
-     * @return string[]
-     */
-    public function getMedia()
-    {
-        return $this->container['media'];
-    }
-
-    /**
-     * Sets media
-     * @param string[] $media Array of item media
-     * @return $this
-     */
-    public function setMedia($media)
-    {
-        $this->container['media'] = $media;
-
-        return $this;
-    }
-
-    /**
-     * Gets buy
-     * @return string
-     */
-    public function getBuy()
-    {
-        return $this->container['buy'];
-    }
-
-    /**
-     * Sets buy
-     * @param string $buy Link to checkout page of item
-     * @return $this
-     */
-    public function setBuy($buy)
-    {
-        $this->container['buy'] = $buy;
+        $this->container['parent'] = $parent;
 
         return $this;
     }

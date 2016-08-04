@@ -1,6 +1,6 @@
 <?php
 /**
- * Response
+ * Dictionary
  *
  * PHP version 5
  *
@@ -39,12 +39,12 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace InventoryClient\Model;
 
 use \ArrayAccess;
 
 /**
- * Response Class Doc Comment
+ * Dictionary Class Doc Comment
  *
  * @category    Class */
 /** 
@@ -53,20 +53,20 @@ use \ArrayAccess;
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class Response implements ArrayAccess
+class Dictionary implements ArrayAccess
 {
     /**
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'Response';
+    protected static $swaggerModelName = 'Dictionary';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = array(
-        'approved' => 'float'
+        
     );
 
     public static function swaggerTypes()
@@ -79,7 +79,7 @@ class Response implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = array(
-        'approved' => 'approved'
+        
     );
 
     public static function attributeMap()
@@ -92,7 +92,7 @@ class Response implements ArrayAccess
      * @var string[]
      */
     protected static $setters = array(
-        'approved' => 'setApproved'
+        
     );
 
     public static function setters()
@@ -105,7 +105,7 @@ class Response implements ArrayAccess
      * @var string[]
      */
     protected static $getters = array(
-        'approved' => 'getApproved'
+        
     );
 
     public static function getters()
@@ -129,7 +129,6 @@ class Response implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['approved'] = isset($data['approved']) ? $data['approved'] : null;
     }
 
     /**
@@ -154,27 +153,6 @@ class Response implements ArrayAccess
         return true;
     }
 
-
-    /**
-     * Gets approved
-     * @return float
-     */
-    public function getApproved()
-    {
-        return $this->container['approved'];
-    }
-
-    /**
-     * Sets approved
-     * @param float $approved Timestamp of API request was processed
-     * @return $this
-     */
-    public function setApproved($approved)
-    {
-        $this->container['approved'] = $approved;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset

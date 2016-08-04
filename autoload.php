@@ -27,7 +27,7 @@
  *
  * After registering this autoload function with SPL, the following line
  * would cause the function to attempt to load the \InventoryClient\Baz\Qux class
- * from /path/to/project/lib/Baz/Qux.php:
+ * from /path/to/project/InventoryClient/Baz/Qux.php:
  *
  *      new \InventoryClient\Baz\Qux;
  *
@@ -41,7 +41,7 @@ spl_autoload_register(function ($class) {
     $prefix = 'InventoryClient\\';
 
     // base directory for the namespace prefix
-    $base_dir = __DIR__ . '/lib/';
+    $base_dir = __DIR__ . '/InventoryClient/';
 
     // does the class use the namespace prefix?
     $len = strlen($prefix);

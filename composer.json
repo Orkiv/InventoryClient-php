@@ -27,7 +27,7 @@
         "squizlabs/php_codesniffer": "~2.6"
     },
     "autoload": {
-        "psr-4": { "InventoryClient\\" : "lib/" }
+        "psr-4": { "InventoryClient\\" : "InventoryClient/" }
     },
     "autoload-dev": {
         "psr-4": { "InventoryClient\\" : "test/" }

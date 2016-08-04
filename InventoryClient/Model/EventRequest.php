@@ -1,6 +1,6 @@
 <?php
 /**
- * Service
+ * EventRequest
  *
  * PHP version 5
  *
@@ -39,12 +39,12 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace InventoryClient\Model;
 
 use \ArrayAccess;
 
 /**
- * Service Class Doc Comment
+ * EventRequest Class Doc Comment
  *
  * @category    Class */
 /** 
@@ -53,24 +53,22 @@ use \ArrayAccess;
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class Service implements ArrayAccess
+class EventRequest implements ArrayAccess
 {
     /**
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'Service';
+    protected static $swaggerModelName = 'EventRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = array(
-        'name' => 'string',
-        'desc' => 'string',
-        'price' => 'string',
-        'event' => '\Swagger\Client\Model\EventRequest',
-        'recurpric' => 'string'
+        'url' => 'string',
+        'serviceid' => 'string',
+        'postbody' => '\InventoryClient\Model\Dictionary'
     );
 
     public static function swaggerTypes()
@@ -83,11 +81,9 @@ class Service implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = array(
-        'name' => 'name',
-        'desc' => 'desc',
-        'price' => 'price',
-        'event' => 'event',
-        'recurpric' => 'recurpric'
+        'url' => 'url',
+        'serviceid' => 'serviceid',
+        'postbody' => 'postbody'
     );
 
     public static function attributeMap()
@@ -100,11 +96,9 @@ class Service implements ArrayAccess
      * @var string[]
      */
     protected static $setters = array(
-        'name' => 'setName',
-        'desc' => 'setDesc',
-        'price' => 'setPrice',
-        'event' => 'setEvent',
-        'recurpric' => 'setRecurpric'
+        'url' => 'setUrl',
+        'serviceid' => 'setServiceid',
+        'postbody' => 'setPostbody'
     );
 
     public static function setters()
@@ -117,11 +111,9 @@ class Service implements ArrayAccess
      * @var string[]
      */
     protected static $getters = array(
-        'name' => 'getName',
-        'desc' => 'getDesc',
-        'price' => 'getPrice',
-        'event' => 'getEvent',
-        'recurpric' => 'getRecurpric'
+        'url' => 'getUrl',
+        'serviceid' => 'getServiceid',
+        'postbody' => 'getPostbody'
     );
 
     public static function getters()
@@ -145,11 +137,9 @@ class Service implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['desc'] = isset($data['desc']) ? $data['desc'] : null;
-        $this->container['price'] = isset($data['price']) ? $data['price'] : null;
-        $this->container['event'] = isset($data['event']) ? $data['event'] : null;
-        $this->container['recurpric'] = isset($data['recurpric']) ? $data['recurpric'] : null;
+        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
+        $this->container['serviceid'] = isset($data['serviceid']) ? $data['serviceid'] : null;
+        $this->container['postbody'] = isset($data['postbody']) ? $data['postbody'] : null;
     }
 
     /**
@@ -176,106 +166,64 @@ class Service implements ArrayAccess
 
 
     /**
-     * Gets name
+     * Gets url
      * @return string
      */
-    public function getName()
+    public function getUrl()
     {
-        return $this->container['name'];
+        return $this->container['url'];
     }
 
     /**
-     * Sets name
-     * @param string $name Name of service
+     * Sets url
+     * @param string $url URL for the server to request on successful subscription to specified service
      * @return $this
      */
-    public function setName($name)
+    public function setUrl($url)
     {
-        $this->container['name'] = $name;
+        $this->container['url'] = $url;
 
         return $this;
     }
 
     /**
-     * Gets desc
+     * Gets serviceid
      * @return string
      */
-    public function getDesc()
+    public function getServiceid()
     {
-        return $this->container['desc'];
+        return $this->container['serviceid'];
     }
 
     /**
-     * Sets desc
-     * @param string $desc Richtext description of item
+     * Sets serviceid
+     * @param string $serviceid ServiceID to bind event to.
      * @return $this
      */
-    public function setDesc($desc)
+    public function setServiceid($serviceid)
     {
-        $this->container['desc'] = $desc;
+        $this->container['serviceid'] = $serviceid;
 
         return $this;
     }
 
     /**
-     * Gets price
-     * @return string
+     * Gets postbody
+     * @return \InventoryClient\Model\Dictionary
      */
-    public function getPrice()
+    public function getPostbody()
     {
-        return $this->container['price'];
+        return $this->container['postbody'];
     }
 
     /**
-     * Sets price
-     * @param string $price Upfront cost of service in hundreds
+     * Sets postbody
+     * @param \InventoryClient\Model\Dictionary $postbody
      * @return $this
      */
-    public function setPrice($price)
+    public function setPostbody($postbody)
     {
-        $this->container['price'] = $price;
-
-        return $this;
-    }
-
-    /**
-     * Gets event
-     * @return \Swagger\Client\Model\EventRequest
-     */
-    public function getEvent()
-    {
-        return $this->container['event'];
-    }
-
-    /**
-     * Sets event
-     * @param \Swagger\Client\Model\EventRequest $event
-     * @return $this
-     */
-    public function setEvent($event)
-    {
-        $this->container['event'] = $event;
-
-        return $this;
-    }
-
-    /**
-     * Gets recurpric
-     * @return string
-     */
-    public function getRecurpric()
-    {
-        return $this->container['recurpric'];
-    }
-
-    /**
-     * Sets recurpric
-     * @param string $recurpric Recurring monthly cost of subscription
-     * @return $this
-     */
-    public function setRecurpric($recurpric)
-    {
-        $this->container['recurpric'] = $recurpric;
+        $this->container['postbody'] = $postbody;
 
         return $this;
     }

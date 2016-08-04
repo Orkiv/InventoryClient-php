@@ -1,6 +1,6 @@
 <?php
 /**
- * Dictionary
+ * Service
  *
  * PHP version 5
  *
@@ -39,12 +39,12 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace InventoryClient\Model;
 
 use \ArrayAccess;
 
 /**
- * Dictionary Class Doc Comment
+ * Service Class Doc Comment
  *
  * @category    Class */
 /** 
@@ -53,20 +53,24 @@ use \ArrayAccess;
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class Dictionary implements ArrayAccess
+class Service implements ArrayAccess
 {
     /**
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'Dictionary';
+    protected static $swaggerModelName = 'Service';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = array(
-        
+        'name' => 'string',
+        'desc' => 'string',
+        'price' => 'string',
+        'event' => '\InventoryClient\Model\EventRequest',
+        'recurpric' => 'string'
     );
 
     public static function swaggerTypes()
@@ -79,7 +83,11 @@ class Dictionary implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = array(
-        
+        'name' => 'name',
+        'desc' => 'desc',
+        'price' => 'price',
+        'event' => 'event',
+        'recurpric' => 'recurpric'
     );
 
     public static function attributeMap()
@@ -92,7 +100,11 @@ class Dictionary implements ArrayAccess
      * @var string[]
      */
     protected static $setters = array(
-        
+        'name' => 'setName',
+        'desc' => 'setDesc',
+        'price' => 'setPrice',
+        'event' => 'setEvent',
+        'recurpric' => 'setRecurpric'
     );
 
     public static function setters()
@@ -105,7 +117,11 @@ class Dictionary implements ArrayAccess
      * @var string[]
      */
     protected static $getters = array(
-        
+        'name' => 'getName',
+        'desc' => 'getDesc',
+        'price' => 'getPrice',
+        'event' => 'getEvent',
+        'recurpric' => 'getRecurpric'
     );
 
     public static function getters()
@@ -129,6 +145,11 @@ class Dictionary implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['desc'] = isset($data['desc']) ? $data['desc'] : null;
+        $this->container['price'] = isset($data['price']) ? $data['price'] : null;
+        $this->container['event'] = isset($data['event']) ? $data['event'] : null;
+        $this->container['recurpric'] = isset($data['recurpric']) ? $data['recurpric'] : null;
     }
 
     /**
@@ -153,6 +174,111 @@ class Dictionary implements ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets name
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     * @param string $name Name of service
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets desc
+     * @return string
+     */
+    public function getDesc()
+    {
+        return $this->container['desc'];
+    }
+
+    /**
+     * Sets desc
+     * @param string $desc Richtext description of item
+     * @return $this
+     */
+    public function setDesc($desc)
+    {
+        $this->container['desc'] = $desc;
+
+        return $this;
+    }
+
+    /**
+     * Gets price
+     * @return string
+     */
+    public function getPrice()
+    {
+        return $this->container['price'];
+    }
+
+    /**
+     * Sets price
+     * @param string $price Upfront cost of service in hundreds
+     * @return $this
+     */
+    public function setPrice($price)
+    {
+        $this->container['price'] = $price;
+
+        return $this;
+    }
+
+    /**
+     * Gets event
+     * @return \InventoryClient\Model\EventRequest
+     */
+    public function getEvent()
+    {
+        return $this->container['event'];
+    }
+
+    /**
+     * Sets event
+     * @param \InventoryClient\Model\EventRequest $event
+     * @return $this
+     */
+    public function setEvent($event)
+    {
+        $this->container['event'] = $event;
+
+        return $this;
+    }
+
+    /**
+     * Gets recurpric
+     * @return string
+     */
+    public function getRecurpric()
+    {
+        return $this->container['recurpric'];
+    }
+
+    /**
+     * Sets recurpric
+     * @param string $recurpric Recurring monthly cost of subscription
+     * @return $this
+     */
+    public function setRecurpric($recurpric)
+    {
+        $this->container['recurpric'] = $recurpric;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset

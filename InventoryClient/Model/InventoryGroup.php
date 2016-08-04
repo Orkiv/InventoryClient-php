@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace InventoryClient\Model;
 
 use \ArrayAccess;
 
@@ -67,7 +67,7 @@ class InventoryGroup implements ArrayAccess
       */
     protected static $swaggerTypes = array(
         'name' => 'string',
-        'items' => '\Swagger\Client\Model\Item[]'
+        'items' => '\InventoryClient\Model\Item[]'
     );
 
     public static function swaggerTypes()
@@ -183,7 +183,7 @@ class InventoryGroup implements ArrayAccess
 
     /**
      * Gets items
-     * @return \Swagger\Client\Model\Item[]
+     * @return \InventoryClient\Model\Item[]
      */
     public function getItems()
     {
@@ -192,7 +192,7 @@ class InventoryGroup implements ArrayAccess
 
     /**
      * Sets items
-     * @param \Swagger\Client\Model\Item[] $items
+     * @param \InventoryClient\Model\Item[] $items
      * @return $this
      */
     public function setItems($items)

@@ -1,6 +1,6 @@
 <?php
 /**
- * Category
+ * Response
  *
  * PHP version 5
  *
@@ -39,12 +39,12 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace InventoryClient\Model;
 
 use \ArrayAccess;
 
 /**
- * Category Class Doc Comment
+ * Response Class Doc Comment
  *
  * @category    Class */
 /** 
@@ -53,22 +53,20 @@ use \ArrayAccess;
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class Category implements ArrayAccess
+class Response implements ArrayAccess
 {
     /**
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'Category';
+    protected static $swaggerModelName = 'Response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = array(
-        'name' => 'string',
-        'id' => 'string',
-        'parent' => 'string'
+        'approved' => 'float'
     );
 
     public static function swaggerTypes()
@@ -81,9 +79,7 @@ class Category implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = array(
-        'name' => 'name',
-        'id' => 'id',
-        'parent' => 'parent'
+        'approved' => 'approved'
     );
 
     public static function attributeMap()
@@ -96,9 +92,7 @@ class Category implements ArrayAccess
      * @var string[]
      */
     protected static $setters = array(
-        'name' => 'setName',
-        'id' => 'setId',
-        'parent' => 'setParent'
+        'approved' => 'setApproved'
     );
 
     public static function setters()
@@ -111,9 +105,7 @@ class Category implements ArrayAccess
      * @var string[]
      */
     protected static $getters = array(
-        'name' => 'getName',
-        'id' => 'getId',
-        'parent' => 'getParent'
+        'approved' => 'getApproved'
     );
 
     public static function getters()
@@ -137,9 +129,7 @@ class Category implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['parent'] = isset($data['parent']) ? $data['parent'] : null;
+        $this->container['approved'] = isset($data['approved']) ? $data['approved'] : null;
     }
 
     /**
@@ -166,64 +156,22 @@ class Category implements ArrayAccess
 
 
     /**
-     * Gets name
-     * @return string
+     * Gets approved
+     * @return float
      */
-    public function getName()
+    public function getApproved()
     {
-        return $this->container['name'];
+        return $this->container['approved'];
     }
 
     /**
-     * Sets name
-     * @param string $name Name of category
+     * Sets approved
+     * @param float $approved Timestamp of API request was processed
      * @return $this
      */
-    public function setName($name)
+    public function setApproved($approved)
     {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     * @return string
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     * @param string $id ID of category
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets parent
-     * @return string
-     */
-    public function getParent()
-    {
-        return $this->container['parent'];
-    }
-
-    /**
-     * Sets parent
-     * @param string $parent ID of parent element. Top level categories are set to root.
-     * @return $this
-     */
-    public function setParent($parent)
-    {
-        $this->container['parent'] = $parent;
+        $this->container['approved'] = $approved;
 
         return $this;
     }

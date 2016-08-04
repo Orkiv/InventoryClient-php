@@ -38,7 +38,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace InventoryClient\Api;
 
 use \InventoryClient\Configuration;
 use \InventoryClient\ApiClient;
@@ -107,7 +107,7 @@ class DefaultApi
      *
      * 
      *
-     * @return \Swagger\Client\Model\InventoryGroup[]
+     * @return \InventoryClient\Model\InventoryGroup[]
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function allGet()
@@ -121,7 +121,7 @@ class DefaultApi
      *
      * 
      *
-     * @return Array of \Swagger\Client\Model\InventoryGroup[], HTTP status code, HTTP response headers (array of strings)
+     * @return Array of \InventoryClient\Model\InventoryGroup[], HTTP status code, HTTP response headers (array of strings)
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function allGetWithHttpInfo()
@@ -166,19 +166,19 @@ class DefaultApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InventoryGroup[]',
+                '\InventoryClient\Model\InventoryGroup[]',
                 '/all/'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InventoryGroup[]', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\InventoryClient\Model\InventoryGroup[]', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InventoryGroup[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\InventoryGroup[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -193,7 +193,7 @@ class DefaultApi
      * 
      *
      * @param string $id Id of category to remove (required)
-     * @return \Swagger\Client\Model\Response
+     * @return \InventoryClient\Model\Response
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function categoriesDelete($id)
@@ -208,7 +208,7 @@ class DefaultApi
      * 
      *
      * @param string $id Id of category to remove (required)
-     * @return Array of \Swagger\Client\Model\Response, HTTP status code, HTTP response headers (array of strings)
+     * @return Array of \InventoryClient\Model\Response, HTTP status code, HTTP response headers (array of strings)
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function categoriesDeleteWithHttpInfo($id)
@@ -261,19 +261,19 @@ class DefaultApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Response',
+                '\InventoryClient\Model\Response',
                 '/categories/'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Response', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\InventoryClient\Model\Response', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -287,8 +287,8 @@ class DefaultApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\Dictionary $query Category to query against system (optional)
-     * @return \Swagger\Client\Model\Category[]
+     * @param \InventoryClient\Model\Dictionary $query Category to query against system (optional)
+     * @return \InventoryClient\Model\Category[]
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function categoriesPost($query = null)
@@ -302,8 +302,8 @@ class DefaultApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\Dictionary $query Category to query against system (optional)
-     * @return Array of \Swagger\Client\Model\Category[], HTTP status code, HTTP response headers (array of strings)
+     * @param \InventoryClient\Model\Dictionary $query Category to query against system (optional)
+     * @return Array of \InventoryClient\Model\Category[], HTTP status code, HTTP response headers (array of strings)
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function categoriesPostWithHttpInfo($query = null)
@@ -353,19 +353,19 @@ class DefaultApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Category[]',
+                '\InventoryClient\Model\Category[]',
                 '/categories/'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Category[]', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\InventoryClient\Model\Category[]', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Category[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Category[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -380,8 +380,8 @@ class DefaultApi
      * 
      *
      * @param string $id category id to update. (required)
-     * @param \Swagger\Client\Model\Category $category New category information. (required)
-     * @return \Swagger\Client\Model\Category
+     * @param \InventoryClient\Model\Category $category New category information. (required)
+     * @return \InventoryClient\Model\Category
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function categoriesPut($id, $category)
@@ -396,8 +396,8 @@ class DefaultApi
      * 
      *
      * @param string $id category id to update. (required)
-     * @param \Swagger\Client\Model\Category $category New category information. (required)
-     * @return Array of \Swagger\Client\Model\Category, HTTP status code, HTTP response headers (array of strings)
+     * @param \InventoryClient\Model\Category $category New category information. (required)
+     * @return Array of \InventoryClient\Model\Category, HTTP status code, HTTP response headers (array of strings)
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function categoriesPutWithHttpInfo($id, $category)
@@ -459,19 +459,19 @@ class DefaultApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Category',
+                '\InventoryClient\Model\Category',
                 '/categories/'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Category', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\InventoryClient\Model\Category', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Category', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Category', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -485,8 +485,8 @@ class DefaultApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\Item $item Item to create. (required)
-     * @return \Swagger\Client\Model\Item
+     * @param \InventoryClient\Model\Item $item Item to create. (required)
+     * @return \InventoryClient\Model\Item
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function itemAddPost($item)
@@ -500,8 +500,8 @@ class DefaultApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\Item $item Item to create. (required)
-     * @return Array of \Swagger\Client\Model\Item, HTTP status code, HTTP response headers (array of strings)
+     * @param \InventoryClient\Model\Item $item Item to create. (required)
+     * @return Array of \InventoryClient\Model\Item, HTTP status code, HTTP response headers (array of strings)
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function itemAddPostWithHttpInfo($item)
@@ -555,19 +555,19 @@ class DefaultApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Item',
+                '\InventoryClient\Model\Item',
                 '/item/add/'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Item', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\InventoryClient\Model\Item', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Item', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Item', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -581,8 +581,8 @@ class DefaultApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\Item[] $items Items to create. (required)
-     * @return \Swagger\Client\Model\Response
+     * @param \InventoryClient\Model\Item[] $items Items to create. (required)
+     * @return \InventoryClient\Model\Response
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function itemAddbulkPost($items)
@@ -596,8 +596,8 @@ class DefaultApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\Item[] $items Items to create. (required)
-     * @return Array of \Swagger\Client\Model\Response, HTTP status code, HTTP response headers (array of strings)
+     * @param \InventoryClient\Model\Item[] $items Items to create. (required)
+     * @return Array of \InventoryClient\Model\Response, HTTP status code, HTTP response headers (array of strings)
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function itemAddbulkPostWithHttpInfo($items)
@@ -651,19 +651,19 @@ class DefaultApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Response',
+                '\InventoryClient\Model\Response',
                 '/item/addbulk/'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Response', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\InventoryClient\Model\Response', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -678,7 +678,7 @@ class DefaultApi
      * 
      *
      * @param string $id item id to remove (required)
-     * @return \Swagger\Client\Model\Response
+     * @return \InventoryClient\Model\Response
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function itemDelete($id)
@@ -693,7 +693,7 @@ class DefaultApi
      * 
      *
      * @param string $id item id to remove (required)
-     * @return Array of \Swagger\Client\Model\Response, HTTP status code, HTTP response headers (array of strings)
+     * @return Array of \InventoryClient\Model\Response, HTTP status code, HTTP response headers (array of strings)
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function itemDeleteWithHttpInfo($id)
@@ -746,19 +746,19 @@ class DefaultApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Response',
+                '\InventoryClient\Model\Response',
                 '/item/'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Response', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\InventoryClient\Model\Response', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -773,8 +773,8 @@ class DefaultApi
      * 
      *
      * @param string $id item id to update. (required)
-     * @param \Swagger\Client\Model\Dictionary $item New item information. (required)
-     * @return \Swagger\Client\Model\Response
+     * @param \InventoryClient\Model\Dictionary $item New item information. (required)
+     * @return \InventoryClient\Model\Response
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function itemPut($id, $item)
@@ -789,8 +789,8 @@ class DefaultApi
      * 
      *
      * @param string $id item id to update. (required)
-     * @param \Swagger\Client\Model\Dictionary $item New item information. (required)
-     * @return Array of \Swagger\Client\Model\Response, HTTP status code, HTTP response headers (array of strings)
+     * @param \InventoryClient\Model\Dictionary $item New item information. (required)
+     * @return Array of \InventoryClient\Model\Response, HTTP status code, HTTP response headers (array of strings)
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function itemPutWithHttpInfo($id, $item)
@@ -852,19 +852,19 @@ class DefaultApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Response',
+                '\InventoryClient\Model\Response',
                 '/item/'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Response', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\InventoryClient\Model\Response', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -878,7 +878,7 @@ class DefaultApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\Dictionary $query Item to query against system. (optional)
+     * @param \InventoryClient\Model\Dictionary $query Item to query against system. (optional)
      * @return float
      * @throws \InventoryClient\ApiException on non-2xx response
      */
@@ -893,7 +893,7 @@ class DefaultApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\Dictionary $query Item to query against system. (optional)
+     * @param \InventoryClient\Model\Dictionary $query Item to query against system. (optional)
      * @return Array of float, HTTP status code, HTTP response headers (array of strings)
      * @throws \InventoryClient\ApiException on non-2xx response
      */
@@ -956,7 +956,7 @@ class DefaultApi
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -970,8 +970,8 @@ class DefaultApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\Dictionary $query Item to query against system. (optional)
-     * @return \Swagger\Client\Model\Item[]
+     * @param \InventoryClient\Model\Dictionary $query Item to query against system. (optional)
+     * @return \InventoryClient\Model\Item[]
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function itemsPost($query = null)
@@ -985,8 +985,8 @@ class DefaultApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\Dictionary $query Item to query against system. (optional)
-     * @return Array of \Swagger\Client\Model\Item[], HTTP status code, HTTP response headers (array of strings)
+     * @param \InventoryClient\Model\Dictionary $query Item to query against system. (optional)
+     * @return Array of \InventoryClient\Model\Item[], HTTP status code, HTTP response headers (array of strings)
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function itemsPostWithHttpInfo($query = null)
@@ -1036,19 +1036,19 @@ class DefaultApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Item[]',
+                '\InventoryClient\Model\Item[]',
                 '/items/'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Item[]', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\InventoryClient\Model\Item[]', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Item[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Item[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1062,8 +1062,8 @@ class DefaultApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\Dictionary $query Item to query against system. (optional)
-     * @return \Swagger\Client\Model\Dictionary[]
+     * @param \InventoryClient\Model\Dictionary $query Item to query against system. (optional)
+     * @return \InventoryClient\Model\Dictionary[]
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function itemsallfieldsPost($query = null)
@@ -1077,8 +1077,8 @@ class DefaultApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\Dictionary $query Item to query against system. (optional)
-     * @return Array of \Swagger\Client\Model\Dictionary[], HTTP status code, HTTP response headers (array of strings)
+     * @param \InventoryClient\Model\Dictionary $query Item to query against system. (optional)
+     * @return Array of \InventoryClient\Model\Dictionary[], HTTP status code, HTTP response headers (array of strings)
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function itemsallfieldsPostWithHttpInfo($query = null)
@@ -1128,19 +1128,19 @@ class DefaultApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Dictionary[]',
+                '\InventoryClient\Model\Dictionary[]',
                 '/items/?allfields'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Dictionary[]', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\InventoryClient\Model\Dictionary[]', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Dictionary[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Dictionary[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1154,8 +1154,8 @@ class DefaultApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\Dictionary $query Order to query against system. (optional)
-     * @return \Swagger\Client\Model\Order[]
+     * @param \InventoryClient\Model\Dictionary $query Order to query against system. (optional)
+     * @return \InventoryClient\Model\Order[]
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function ordersPost($query = null)
@@ -1169,8 +1169,8 @@ class DefaultApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\Dictionary $query Order to query against system. (optional)
-     * @return Array of \Swagger\Client\Model\Order[], HTTP status code, HTTP response headers (array of strings)
+     * @param \InventoryClient\Model\Dictionary $query Order to query against system. (optional)
+     * @return Array of \InventoryClient\Model\Order[], HTTP status code, HTTP response headers (array of strings)
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function ordersPostWithHttpInfo($query = null)
@@ -1220,19 +1220,19 @@ class DefaultApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Order[]',
+                '\InventoryClient\Model\Order[]',
                 '/orders/'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Order[]', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\InventoryClient\Model\Order[]', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Order[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Order[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1252,8 +1252,8 @@ class DefaultApi
      * @param string $search Performs a regex pattern match against the items within your account (optional)
      * @param float $minprice Min price in hundreds. (optional)
      * @param float $maxprice Max price in hudreds. (optional)
-     * @param \Swagger\Client\Model\Dictionary $query Custom parameters to query against system. (optional)
-     * @return \Swagger\Client\Model\Item[]
+     * @param \InventoryClient\Model\Dictionary $query Custom parameters to query against system. (optional)
+     * @return \InventoryClient\Model\Item[]
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function queryPost($page = null, $categoryid = null, $sort = null, $search = null, $minprice = null, $maxprice = null, $query = null)
@@ -1273,8 +1273,8 @@ class DefaultApi
      * @param string $search Performs a regex pattern match against the items within your account (optional)
      * @param float $minprice Min price in hundreds. (optional)
      * @param float $maxprice Max price in hudreds. (optional)
-     * @param \Swagger\Client\Model\Dictionary $query Custom parameters to query against system. (optional)
-     * @return Array of \Swagger\Client\Model\Item[], HTTP status code, HTTP response headers (array of strings)
+     * @param \InventoryClient\Model\Dictionary $query Custom parameters to query against system. (optional)
+     * @return Array of \InventoryClient\Model\Item[], HTTP status code, HTTP response headers (array of strings)
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function queryPostWithHttpInfo($page = null, $categoryid = null, $sort = null, $search = null, $minprice = null, $maxprice = null, $query = null)
@@ -1348,19 +1348,19 @@ class DefaultApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Item[]',
+                '\InventoryClient\Model\Item[]',
                 '/query/'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Item[]', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\InventoryClient\Model\Item[]', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Item[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Item[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1380,8 +1380,8 @@ class DefaultApi
      * @param string $search Performs a regex pattern match against the items within your account (optional)
      * @param float $minprice Min price in hundreds. (optional)
      * @param float $maxprice Max price in hudreds. (optional)
-     * @param \Swagger\Client\Model\Dictionary $query Custom parameters to query against system. (optional)
-     * @return \Swagger\Client\Model\Dictionary[]
+     * @param \InventoryClient\Model\Dictionary $query Custom parameters to query against system. (optional)
+     * @return \InventoryClient\Model\Dictionary[]
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function queryallfieldsPost($page = null, $categoryid = null, $sort = null, $search = null, $minprice = null, $maxprice = null, $query = null)
@@ -1401,8 +1401,8 @@ class DefaultApi
      * @param string $search Performs a regex pattern match against the items within your account (optional)
      * @param float $minprice Min price in hundreds. (optional)
      * @param float $maxprice Max price in hudreds. (optional)
-     * @param \Swagger\Client\Model\Dictionary $query Custom parameters to query against system. (optional)
-     * @return Array of \Swagger\Client\Model\Dictionary[], HTTP status code, HTTP response headers (array of strings)
+     * @param \InventoryClient\Model\Dictionary $query Custom parameters to query against system. (optional)
+     * @return Array of \InventoryClient\Model\Dictionary[], HTTP status code, HTTP response headers (array of strings)
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function queryallfieldsPostWithHttpInfo($page = null, $categoryid = null, $sort = null, $search = null, $minprice = null, $maxprice = null, $query = null)
@@ -1476,19 +1476,19 @@ class DefaultApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Dictionary[]',
+                '\InventoryClient\Model\Dictionary[]',
                 '/query/?allfields'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Dictionary[]', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\InventoryClient\Model\Dictionary[]', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Dictionary[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Dictionary[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1503,7 +1503,7 @@ class DefaultApi
      * 
      *
      * @param string $id ID of the service to update (required)
-     * @return \Swagger\Client\Model\Response
+     * @return \InventoryClient\Model\Response
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function servicesDelete($id)
@@ -1518,7 +1518,7 @@ class DefaultApi
      * 
      *
      * @param string $id ID of the service to update (required)
-     * @return Array of \Swagger\Client\Model\Response, HTTP status code, HTTP response headers (array of strings)
+     * @return Array of \InventoryClient\Model\Response, HTTP status code, HTTP response headers (array of strings)
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function servicesDeleteWithHttpInfo($id)
@@ -1571,19 +1571,19 @@ class DefaultApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Response',
+                '\InventoryClient\Model\Response',
                 '/services/'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Response', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\InventoryClient\Model\Response', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1597,7 +1597,7 @@ class DefaultApi
      *
      * 
      *
-     * @return \Swagger\Client\Model\Service[]
+     * @return \InventoryClient\Model\Service[]
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function servicesGet()
@@ -1611,7 +1611,7 @@ class DefaultApi
      *
      * 
      *
-     * @return Array of \Swagger\Client\Model\Service[], HTTP status code, HTTP response headers (array of strings)
+     * @return Array of \InventoryClient\Model\Service[], HTTP status code, HTTP response headers (array of strings)
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function servicesGetWithHttpInfo()
@@ -1656,19 +1656,19 @@ class DefaultApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Service[]',
+                '\InventoryClient\Model\Service[]',
                 '/services/'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Service[]', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\InventoryClient\Model\Service[]', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Service[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Service[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1682,8 +1682,8 @@ class DefaultApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\Service $service Service to create. (required)
-     * @return \Swagger\Client\Model\Service
+     * @param \InventoryClient\Model\Service $service Service to create. (required)
+     * @return \InventoryClient\Model\Service
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function servicesPost($service)
@@ -1697,8 +1697,8 @@ class DefaultApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\Service $service Service to create. (required)
-     * @return Array of \Swagger\Client\Model\Service, HTTP status code, HTTP response headers (array of strings)
+     * @param \InventoryClient\Model\Service $service Service to create. (required)
+     * @return Array of \InventoryClient\Model\Service, HTTP status code, HTTP response headers (array of strings)
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function servicesPostWithHttpInfo($service)
@@ -1752,19 +1752,19 @@ class DefaultApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Service',
+                '\InventoryClient\Model\Service',
                 '/services/'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Service', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\InventoryClient\Model\Service', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Service', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Service', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1779,8 +1779,8 @@ class DefaultApi
      * 
      *
      * @param string $id ID of the service to update (required)
-     * @param \Swagger\Client\Model\Service $service New service data to set. (required)
-     * @return \Swagger\Client\Model\Response
+     * @param \InventoryClient\Model\Service $service New service data to set. (required)
+     * @return \InventoryClient\Model\Response
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function servicesPut($id, $service)
@@ -1795,8 +1795,8 @@ class DefaultApi
      * 
      *
      * @param string $id ID of the service to update (required)
-     * @param \Swagger\Client\Model\Service $service New service data to set. (required)
-     * @return Array of \Swagger\Client\Model\Response, HTTP status code, HTTP response headers (array of strings)
+     * @param \InventoryClient\Model\Service $service New service data to set. (required)
+     * @return Array of \InventoryClient\Model\Response, HTTP status code, HTTP response headers (array of strings)
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function servicesPutWithHttpInfo($id, $service)
@@ -1858,19 +1858,19 @@ class DefaultApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Response',
+                '\InventoryClient\Model\Response',
                 '/services/'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Response', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\InventoryClient\Model\Response', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1885,7 +1885,7 @@ class DefaultApi
      * 
      *
      * @param string $id Will delete event attached to this serviceid (optional)
-     * @return \Swagger\Client\Model\Response
+     * @return \InventoryClient\Model\Response
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function writeDelete($id = null)
@@ -1900,7 +1900,7 @@ class DefaultApi
      * 
      *
      * @param string $id Will delete event attached to this serviceid (optional)
-     * @return Array of \Swagger\Client\Model\Response, HTTP status code, HTTP response headers (array of strings)
+     * @return Array of \InventoryClient\Model\Response, HTTP status code, HTTP response headers (array of strings)
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function writeDeleteWithHttpInfo($id = null)
@@ -1949,19 +1949,19 @@ class DefaultApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Response',
+                '\InventoryClient\Model\Response',
                 '/write/'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Response', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\InventoryClient\Model\Response', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1975,8 +1975,8 @@ class DefaultApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\EventRequest $event_request Event to upload (required)
-     * @return \Swagger\Client\Model\Response
+     * @param \InventoryClient\Model\EventRequest $event_request Event to upload (required)
+     * @return \InventoryClient\Model\Response
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function writePost($event_request)
@@ -1990,8 +1990,8 @@ class DefaultApi
      *
      * 
      *
-     * @param \Swagger\Client\Model\EventRequest $event_request Event to upload (required)
-     * @return Array of \Swagger\Client\Model\Response, HTTP status code, HTTP response headers (array of strings)
+     * @param \InventoryClient\Model\EventRequest $event_request Event to upload (required)
+     * @return Array of \InventoryClient\Model\Response, HTTP status code, HTTP response headers (array of strings)
      * @throws \InventoryClient\ApiException on non-2xx response
      */
     public function writePostWithHttpInfo($event_request)
@@ -2045,19 +2045,19 @@ class DefaultApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Response',
+                '\InventoryClient\Model\Response',
                 '/write/'
             );
 
-            return array($this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Response', $httpHeader), $statusCode, $httpHeader);
+            return array($this->apiClient->getSerializer()->deserialize($response, '\InventoryClient\Model\Response', $httpHeader), $statusCode, $httpHeader);
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

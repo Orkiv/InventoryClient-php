@@ -27,7 +27,7 @@ Method | HTTP request | Description
 
 
 # **allGet**
-> \Swagger\Client\Model\InventoryGroup[] allGet()
+> \InventoryClient\Model\InventoryGroup[] allGet()
 
 
 
@@ -61,7 +61,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\InventoryGroup[]**](../Model/InventoryGroup.md)
+[**\InventoryClient\Model\InventoryGroup[]**](../Model/InventoryGroup.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **categoriesDelete**
-> \Swagger\Client\Model\Response categoriesDelete($id)
+> \InventoryClient\Model\Response categoriesDelete($id)
 
 
 
@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Response**](../Model/Response.md)
+[**\InventoryClient\Model\Response**](../Model/Response.md)
 
 ### Authorization
 
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **categoriesPost**
-> \Swagger\Client\Model\Category[] categoriesPost($query)
+> \InventoryClient\Model\Category[] categoriesPost($query)
 
 
 
@@ -146,7 +146,7 @@ InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('accountid',
 // InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
 
 $api_instance = new InventoryClient\Api\DefaultApi();
-$query = new \Swagger\Client\Model\Dictionary(); // \Swagger\Client\Model\Dictionary | Category to query against system
+$query = new \InventoryClient\Model\Dictionary(); // \InventoryClient\Model\Dictionary | Category to query against system
 
 try {
     $result = $api_instance->categoriesPost($query);
@@ -161,11 +161,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **query** | [**\Swagger\Client\Model\Dictionary**](../Model/\Swagger\Client\Model\Dictionary.md)| Category to query against system | [optional]
+ **query** | [**\InventoryClient\Model\Dictionary**](../Model/\InventoryClient\Model\Dictionary.md)| Category to query against system | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\Category[]**](../Model/Category.md)
+[**\InventoryClient\Model\Category[]**](../Model/Category.md)
 
 ### Authorization
 
@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **categoriesPut**
-> \Swagger\Client\Model\Category categoriesPut($id, $category)
+> \InventoryClient\Model\Category categoriesPut($id, $category)
 
 
 
@@ -201,7 +201,7 @@ InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('accountid',
 
 $api_instance = new InventoryClient\Api\DefaultApi();
 $id = "id_example"; // string | category id to update.
-$category = new \Swagger\Client\Model\Category(); // \Swagger\Client\Model\Category | New category information.
+$category = new \InventoryClient\Model\Category(); // \InventoryClient\Model\Category | New category information.
 
 try {
     $result = $api_instance->categoriesPut($id, $category);
@@ -217,11 +217,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| category id to update. |
- **category** | [**\Swagger\Client\Model\Category**](../Model/\Swagger\Client\Model\Category.md)| New category information. |
+ **category** | [**\InventoryClient\Model\Category**](../Model/\InventoryClient\Model\Category.md)| New category information. |
 
 ### Return type
 
-[**\Swagger\Client\Model\Category**](../Model/Category.md)
+[**\InventoryClient\Model\Category**](../Model/Category.md)
 
 ### Authorization
 
@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **itemAddPost**
-> \Swagger\Client\Model\Item itemAddPost($item)
+> \InventoryClient\Model\Item itemAddPost($item)
 
 
 
@@ -254,7 +254,7 @@ InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('accountid',
 // InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
 
 $api_instance = new InventoryClient\Api\DefaultApi();
-$item = new \Swagger\Client\Model\Item(); // \Swagger\Client\Model\Item | Item to create.
+$item = new \InventoryClient\Model\Item(); // \InventoryClient\Model\Item | Item to create.
 
 try {
     $result = $api_instance->itemAddPost($item);
@@ -269,11 +269,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **item** | [**\Swagger\Client\Model\Item**](../Model/\Swagger\Client\Model\Item.md)| Item to create. |
+ **item** | [**\InventoryClient\Model\Item**](../Model/\InventoryClient\Model\Item.md)| Item to create. |
 
 ### Return type
 
-[**\Swagger\Client\Model\Item**](../Model/Item.md)
+[**\InventoryClient\Model\Item**](../Model/Item.md)
 
 ### Authorization
 
@@ -287,7 +287,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **itemAddbulkPost**
-> \Swagger\Client\Model\Response itemAddbulkPost($items)
+> \InventoryClient\Model\Response itemAddbulkPost($items)
 
 
 
@@ -306,7 +306,7 @@ InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('accountid',
 // InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
 
 $api_instance = new InventoryClient\Api\DefaultApi();
-$items = array(new Item()); // \Swagger\Client\Model\Item[] | Items to create.
+$items = array(new Item()); // \InventoryClient\Model\Item[] | Items to create.
 
 try {
     $result = $api_instance->itemAddbulkPost($items);
@@ -321,11 +321,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **items** | [**\Swagger\Client\Model\Item[]**](../Model/Item.md)| Items to create. |
+ **items** | [**\InventoryClient\Model\Item[]**](../Model/Item.md)| Items to create. |
 
 ### Return type
 
-[**\Swagger\Client\Model\Response**](../Model/Response.md)
+[**\InventoryClient\Model\Response**](../Model/Response.md)
 
 ### Authorization
 
@@ -339,7 +339,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **itemDelete**
-> \Swagger\Client\Model\Response itemDelete($id)
+> \InventoryClient\Model\Response itemDelete($id)
 
 
 
@@ -377,7 +377,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Response**](../Model/Response.md)
+[**\InventoryClient\Model\Response**](../Model/Response.md)
 
 ### Authorization
 
@@ -391,7 +391,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **itemPut**
-> \Swagger\Client\Model\Response itemPut($id, $item)
+> \InventoryClient\Model\Response itemPut($id, $item)
 
 
 
@@ -411,7 +411,7 @@ InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('accountid',
 
 $api_instance = new InventoryClient\Api\DefaultApi();
 $id = "id_example"; // string | item id to update.
-$item = new \Swagger\Client\Model\Dictionary(); // \Swagger\Client\Model\Dictionary | New item information.
+$item = new \InventoryClient\Model\Dictionary(); // \InventoryClient\Model\Dictionary | New item information.
 
 try {
     $result = $api_instance->itemPut($id, $item);
@@ -427,11 +427,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| item id to update. |
- **item** | [**\Swagger\Client\Model\Dictionary**](../Model/\Swagger\Client\Model\Dictionary.md)| New item information. |
+ **item** | [**\InventoryClient\Model\Dictionary**](../Model/\InventoryClient\Model\Dictionary.md)| New item information. |
 
 ### Return type
 
-[**\Swagger\Client\Model\Response**](../Model/Response.md)
+[**\InventoryClient\Model\Response**](../Model/Response.md)
 
 ### Authorization
 
@@ -464,7 +464,7 @@ InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('accountid',
 // InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
 
 $api_instance = new InventoryClient\Api\DefaultApi();
-$query = new \Swagger\Client\Model\Dictionary(); // \Swagger\Client\Model\Dictionary | Item to query against system.
+$query = new \InventoryClient\Model\Dictionary(); // \InventoryClient\Model\Dictionary | Item to query against system.
 
 try {
     $result = $api_instance->itemsCountPost($query);
@@ -479,7 +479,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **query** | [**\Swagger\Client\Model\Dictionary**](../Model/\Swagger\Client\Model\Dictionary.md)| Item to query against system. | [optional]
+ **query** | [**\InventoryClient\Model\Dictionary**](../Model/\InventoryClient\Model\Dictionary.md)| Item to query against system. | [optional]
 
 ### Return type
 
@@ -497,7 +497,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **itemsPost**
-> \Swagger\Client\Model\Item[] itemsPost($query)
+> \InventoryClient\Model\Item[] itemsPost($query)
 
 
 
@@ -516,7 +516,7 @@ InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('accountid',
 // InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
 
 $api_instance = new InventoryClient\Api\DefaultApi();
-$query = new \Swagger\Client\Model\Dictionary(); // \Swagger\Client\Model\Dictionary | Item to query against system.
+$query = new \InventoryClient\Model\Dictionary(); // \InventoryClient\Model\Dictionary | Item to query against system.
 
 try {
     $result = $api_instance->itemsPost($query);
@@ -531,11 +531,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **query** | [**\Swagger\Client\Model\Dictionary**](../Model/\Swagger\Client\Model\Dictionary.md)| Item to query against system. | [optional]
+ **query** | [**\InventoryClient\Model\Dictionary**](../Model/\InventoryClient\Model\Dictionary.md)| Item to query against system. | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\Item[]**](../Model/Item.md)
+[**\InventoryClient\Model\Item[]**](../Model/Item.md)
 
 ### Authorization
 
@@ -549,7 +549,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **itemsallfieldsPost**
-> \Swagger\Client\Model\Dictionary[] itemsallfieldsPost($query)
+> \InventoryClient\Model\Dictionary[] itemsallfieldsPost($query)
 
 
 
@@ -568,7 +568,7 @@ InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('accountid',
 // InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
 
 $api_instance = new InventoryClient\Api\DefaultApi();
-$query = new \Swagger\Client\Model\Dictionary(); // \Swagger\Client\Model\Dictionary | Item to query against system.
+$query = new \InventoryClient\Model\Dictionary(); // \InventoryClient\Model\Dictionary | Item to query against system.
 
 try {
     $result = $api_instance->itemsallfieldsPost($query);
@@ -583,11 +583,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **query** | [**\Swagger\Client\Model\Dictionary**](../Model/\Swagger\Client\Model\Dictionary.md)| Item to query against system. | [optional]
+ **query** | [**\InventoryClient\Model\Dictionary**](../Model/\InventoryClient\Model\Dictionary.md)| Item to query against system. | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\Dictionary[]**](../Model/Dictionary.md)
+[**\InventoryClient\Model\Dictionary[]**](../Model/Dictionary.md)
 
 ### Authorization
 
@@ -601,7 +601,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **ordersPost**
-> \Swagger\Client\Model\Order[] ordersPost($query)
+> \InventoryClient\Model\Order[] ordersPost($query)
 
 
 
@@ -620,7 +620,7 @@ InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('accountid',
 // InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
 
 $api_instance = new InventoryClient\Api\DefaultApi();
-$query = new \Swagger\Client\Model\Dictionary(); // \Swagger\Client\Model\Dictionary | Order to query against system.
+$query = new \InventoryClient\Model\Dictionary(); // \InventoryClient\Model\Dictionary | Order to query against system.
 
 try {
     $result = $api_instance->ordersPost($query);
@@ -635,11 +635,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **query** | [**\Swagger\Client\Model\Dictionary**](../Model/\Swagger\Client\Model\Dictionary.md)| Order to query against system. | [optional]
+ **query** | [**\InventoryClient\Model\Dictionary**](../Model/\InventoryClient\Model\Dictionary.md)| Order to query against system. | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\Order[]**](../Model/Order.md)
+[**\InventoryClient\Model\Order[]**](../Model/Order.md)
 
 ### Authorization
 
@@ -653,7 +653,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **queryPost**
-> \Swagger\Client\Model\Item[] queryPost($page, $categoryid, $sort, $search, $minprice, $maxprice, $query)
+> \InventoryClient\Model\Item[] queryPost($page, $categoryid, $sort, $search, $minprice, $maxprice, $query)
 
 
 
@@ -678,7 +678,7 @@ $sort = "sort_example"; // string | Comma delimited Sort string. ie ; +ordprice.
 $search = "search_example"; // string | Performs a regex pattern match against the items within your account
 $minprice = 3.4; // float | Min price in hundreds.
 $maxprice = 3.4; // float | Max price in hudreds.
-$query = new \Swagger\Client\Model\Dictionary(); // \Swagger\Client\Model\Dictionary | Custom parameters to query against system.
+$query = new \InventoryClient\Model\Dictionary(); // \InventoryClient\Model\Dictionary | Custom parameters to query against system.
 
 try {
     $result = $api_instance->queryPost($page, $categoryid, $sort, $search, $minprice, $maxprice, $query);
@@ -699,11 +699,11 @@ Name | Type | Description  | Notes
  **search** | **string**| Performs a regex pattern match against the items within your account | [optional]
  **minprice** | **float**| Min price in hundreds. | [optional]
  **maxprice** | **float**| Max price in hudreds. | [optional]
- **query** | [**\Swagger\Client\Model\Dictionary**](../Model/\Swagger\Client\Model\Dictionary.md)| Custom parameters to query against system. | [optional]
+ **query** | [**\InventoryClient\Model\Dictionary**](../Model/\InventoryClient\Model\Dictionary.md)| Custom parameters to query against system. | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\Item[]**](../Model/Item.md)
+[**\InventoryClient\Model\Item[]**](../Model/Item.md)
 
 ### Authorization
 
@@ -717,7 +717,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **queryallfieldsPost**
-> \Swagger\Client\Model\Dictionary[] queryallfieldsPost($page, $categoryid, $sort, $search, $minprice, $maxprice, $query)
+> \InventoryClient\Model\Dictionary[] queryallfieldsPost($page, $categoryid, $sort, $search, $minprice, $maxprice, $query)
 
 
 
@@ -742,7 +742,7 @@ $sort = "sort_example"; // string | Comma delimited Sort string. ie ; +ordprice.
 $search = "search_example"; // string | Performs a regex pattern match against the items within your account
 $minprice = 3.4; // float | Min price in hundreds.
 $maxprice = 3.4; // float | Max price in hudreds.
-$query = new \Swagger\Client\Model\Dictionary(); // \Swagger\Client\Model\Dictionary | Custom parameters to query against system.
+$query = new \InventoryClient\Model\Dictionary(); // \InventoryClient\Model\Dictionary | Custom parameters to query against system.
 
 try {
     $result = $api_instance->queryallfieldsPost($page, $categoryid, $sort, $search, $minprice, $maxprice, $query);
@@ -763,11 +763,11 @@ Name | Type | Description  | Notes
  **search** | **string**| Performs a regex pattern match against the items within your account | [optional]
  **minprice** | **float**| Min price in hundreds. | [optional]
  **maxprice** | **float**| Max price in hudreds. | [optional]
- **query** | [**\Swagger\Client\Model\Dictionary**](../Model/\Swagger\Client\Model\Dictionary.md)| Custom parameters to query against system. | [optional]
+ **query** | [**\InventoryClient\Model\Dictionary**](../Model/\InventoryClient\Model\Dictionary.md)| Custom parameters to query against system. | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\Dictionary[]**](../Model/Dictionary.md)
+[**\InventoryClient\Model\Dictionary[]**](../Model/Dictionary.md)
 
 ### Authorization
 
@@ -781,7 +781,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **servicesDelete**
-> \Swagger\Client\Model\Response servicesDelete($id)
+> \InventoryClient\Model\Response servicesDelete($id)
 
 
 
@@ -819,7 +819,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Response**](../Model/Response.md)
+[**\InventoryClient\Model\Response**](../Model/Response.md)
 
 ### Authorization
 
@@ -833,7 +833,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **servicesGet**
-> \Swagger\Client\Model\Service[] servicesGet()
+> \InventoryClient\Model\Service[] servicesGet()
 
 
 
@@ -867,7 +867,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\Service[]**](../Model/Service.md)
+[**\InventoryClient\Model\Service[]**](../Model/Service.md)
 
 ### Authorization
 
@@ -881,7 +881,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **servicesPost**
-> \Swagger\Client\Model\Service servicesPost($service)
+> \InventoryClient\Model\Service servicesPost($service)
 
 
 
@@ -900,7 +900,7 @@ InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('accountid',
 // InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
 
 $api_instance = new InventoryClient\Api\DefaultApi();
-$service = new \Swagger\Client\Model\Service(); // \Swagger\Client\Model\Service | Service to create.
+$service = new \InventoryClient\Model\Service(); // \InventoryClient\Model\Service | Service to create.
 
 try {
     $result = $api_instance->servicesPost($service);
@@ -915,11 +915,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service** | [**\Swagger\Client\Model\Service**](../Model/\Swagger\Client\Model\Service.md)| Service to create. |
+ **service** | [**\InventoryClient\Model\Service**](../Model/\InventoryClient\Model\Service.md)| Service to create. |
 
 ### Return type
 
-[**\Swagger\Client\Model\Service**](../Model/Service.md)
+[**\InventoryClient\Model\Service**](../Model/Service.md)
 
 ### Authorization
 
@@ -933,7 +933,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **servicesPut**
-> \Swagger\Client\Model\Response servicesPut($id, $service)
+> \InventoryClient\Model\Response servicesPut($id, $service)
 
 
 
@@ -953,7 +953,7 @@ InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('accountid',
 
 $api_instance = new InventoryClient\Api\DefaultApi();
 $id = "id_example"; // string | ID of the service to update
-$service = new \Swagger\Client\Model\Service(); // \Swagger\Client\Model\Service | New service data to set.
+$service = new \InventoryClient\Model\Service(); // \InventoryClient\Model\Service | New service data to set.
 
 try {
     $result = $api_instance->servicesPut($id, $service);
@@ -969,11 +969,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID of the service to update |
- **service** | [**\Swagger\Client\Model\Service**](../Model/\Swagger\Client\Model\Service.md)| New service data to set. |
+ **service** | [**\InventoryClient\Model\Service**](../Model/\InventoryClient\Model\Service.md)| New service data to set. |
 
 ### Return type
 
-[**\Swagger\Client\Model\Response**](../Model/Response.md)
+[**\InventoryClient\Model\Response**](../Model/Response.md)
 
 ### Authorization
 
@@ -987,7 +987,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **writeDelete**
-> \Swagger\Client\Model\Response writeDelete($id)
+> \InventoryClient\Model\Response writeDelete($id)
 
 
 
@@ -1025,7 +1025,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Response**](../Model/Response.md)
+[**\InventoryClient\Model\Response**](../Model/Response.md)
 
 ### Authorization
 
@@ -1039,7 +1039,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **writePost**
-> \Swagger\Client\Model\Response writePost($event_request)
+> \InventoryClient\Model\Response writePost($event_request)
 
 
 
@@ -1060,7 +1060,7 @@ InventoryClient\Configuration::getDefaultConfiguration()->setApiKey('accountid',
 // InventoryClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('accountid', 'Bearer');
 
 $api_instance = new InventoryClient\Api\DefaultApi();
-$event_request = new \Swagger\Client\Model\EventRequest(); // \Swagger\Client\Model\EventRequest | Event to upload
+$event_request = new \InventoryClient\Model\EventRequest(); // \InventoryClient\Model\EventRequest | Event to upload
 
 try {
     $result = $api_instance->writePost($event_request);
@@ -1075,11 +1075,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **event_request** | [**\Swagger\Client\Model\EventRequest**](../Model/\Swagger\Client\Model\EventRequest.md)| Event to upload |
+ **event_request** | [**\InventoryClient\Model\EventRequest**](../Model/\InventoryClient\Model\EventRequest.md)| Event to upload |
 
 ### Return type
 
-[**\Swagger\Client\Model\Response**](../Model/Response.md)
+[**\InventoryClient\Model\Response**](../Model/Response.md)
 
 ### Authorization
 

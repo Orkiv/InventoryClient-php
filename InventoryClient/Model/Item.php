@@ -1,6 +1,6 @@
 <?php
 /**
- * EventRequest
+ * Item
  *
  * PHP version 5
  *
@@ -39,12 +39,12 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace InventoryClient\Model;
 
 use \ArrayAccess;
 
 /**
- * EventRequest Class Doc Comment
+ * Item Class Doc Comment
  *
  * @category    Class */
 /** 
@@ -53,22 +53,28 @@ use \ArrayAccess;
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class EventRequest implements ArrayAccess
+class Item implements ArrayAccess
 {
     /**
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'EventRequest';
+    protected static $swaggerModelName = 'Item';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = array(
-        'url' => 'string',
-        'serviceid' => 'string',
-        'postbody' => '\Swagger\Client\Model\Dictionary'
+        'id' => 'string',
+        'category' => 'string',
+        'desc' => 'string',
+        'name' => 'string',
+        'ordprice' => 'float',
+        'price' => 'string',
+        'quantity' => 'string',
+        'media' => 'string[]',
+        'buy' => 'string'
     );
 
     public static function swaggerTypes()
@@ -81,9 +87,15 @@ class EventRequest implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = array(
-        'url' => 'url',
-        'serviceid' => 'serviceid',
-        'postbody' => 'postbody'
+        'id' => 'id',
+        'category' => 'category',
+        'desc' => 'desc',
+        'name' => 'name',
+        'ordprice' => 'ordprice',
+        'price' => 'price',
+        'quantity' => 'quantity',
+        'media' => 'media',
+        'buy' => 'Buy'
     );
 
     public static function attributeMap()
@@ -96,9 +108,15 @@ class EventRequest implements ArrayAccess
      * @var string[]
      */
     protected static $setters = array(
-        'url' => 'setUrl',
-        'serviceid' => 'setServiceid',
-        'postbody' => 'setPostbody'
+        'id' => 'setId',
+        'category' => 'setCategory',
+        'desc' => 'setDesc',
+        'name' => 'setName',
+        'ordprice' => 'setOrdprice',
+        'price' => 'setPrice',
+        'quantity' => 'setQuantity',
+        'media' => 'setMedia',
+        'buy' => 'setBuy'
     );
 
     public static function setters()
@@ -111,9 +129,15 @@ class EventRequest implements ArrayAccess
      * @var string[]
      */
     protected static $getters = array(
-        'url' => 'getUrl',
-        'serviceid' => 'getServiceid',
-        'postbody' => 'getPostbody'
+        'id' => 'getId',
+        'category' => 'getCategory',
+        'desc' => 'getDesc',
+        'name' => 'getName',
+        'ordprice' => 'getOrdprice',
+        'price' => 'getPrice',
+        'quantity' => 'getQuantity',
+        'media' => 'getMedia',
+        'buy' => 'getBuy'
     );
 
     public static function getters()
@@ -137,9 +161,15 @@ class EventRequest implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
-        $this->container['serviceid'] = isset($data['serviceid']) ? $data['serviceid'] : null;
-        $this->container['postbody'] = isset($data['postbody']) ? $data['postbody'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['category'] = isset($data['category']) ? $data['category'] : null;
+        $this->container['desc'] = isset($data['desc']) ? $data['desc'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['ordprice'] = isset($data['ordprice']) ? $data['ordprice'] : null;
+        $this->container['price'] = isset($data['price']) ? $data['price'] : null;
+        $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
+        $this->container['media'] = isset($data['media']) ? $data['media'] : null;
+        $this->container['buy'] = isset($data['buy']) ? $data['buy'] : null;
     }
 
     /**
@@ -166,64 +196,190 @@ class EventRequest implements ArrayAccess
 
 
     /**
-     * Gets url
+     * Gets id
      * @return string
      */
-    public function getUrl()
+    public function getId()
     {
-        return $this->container['url'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets url
-     * @param string $url URL for the server to request on successful subscription to specified service
+     * Sets id
+     * @param string $id ID of item
      * @return $this
      */
-    public function setUrl($url)
+    public function setId($id)
     {
-        $this->container['url'] = $url;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets serviceid
+     * Gets category
      * @return string
      */
-    public function getServiceid()
+    public function getCategory()
     {
-        return $this->container['serviceid'];
+        return $this->container['category'];
     }
 
     /**
-     * Sets serviceid
-     * @param string $serviceid ServiceID to bind event to.
+     * Sets category
+     * @param string $category Category ID of item
      * @return $this
      */
-    public function setServiceid($serviceid)
+    public function setCategory($category)
     {
-        $this->container['serviceid'] = $serviceid;
+        $this->container['category'] = $category;
 
         return $this;
     }
 
     /**
-     * Gets postbody
-     * @return \Swagger\Client\Model\Dictionary
+     * Gets desc
+     * @return string
      */
-    public function getPostbody()
+    public function getDesc()
     {
-        return $this->container['postbody'];
+        return $this->container['desc'];
     }
 
     /**
-     * Sets postbody
-     * @param \Swagger\Client\Model\Dictionary $postbody
+     * Sets desc
+     * @param string $desc Rich text description of item
      * @return $this
      */
-    public function setPostbody($postbody)
+    public function setDesc($desc)
     {
-        $this->container['postbody'] = $postbody;
+        $this->container['desc'] = $desc;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     * @param string $name Name of item
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets ordprice
+     * @return float
+     */
+    public function getOrdprice()
+    {
+        return $this->container['ordprice'];
+    }
+
+    /**
+     * Sets ordprice
+     * @param float $ordprice Integer value of price
+     * @return $this
+     */
+    public function setOrdprice($ordprice)
+    {
+        $this->container['ordprice'] = $ordprice;
+
+        return $this;
+    }
+
+    /**
+     * Gets price
+     * @return string
+     */
+    public function getPrice()
+    {
+        return $this->container['price'];
+    }
+
+    /**
+     * Sets price
+     * @param string $price String value of price
+     * @return $this
+     */
+    public function setPrice($price)
+    {
+        $this->container['price'] = $price;
+
+        return $this;
+    }
+
+    /**
+     * Gets quantity
+     * @return string
+     */
+    public function getQuantity()
+    {
+        return $this->container['quantity'];
+    }
+
+    /**
+     * Sets quantity
+     * @param string $quantity Inventory quantity
+     * @return $this
+     */
+    public function setQuantity($quantity)
+    {
+        $this->container['quantity'] = $quantity;
+
+        return $this;
+    }
+
+    /**
+     * Gets media
+     * @return string[]
+     */
+    public function getMedia()
+    {
+        return $this->container['media'];
+    }
+
+    /**
+     * Sets media
+     * @param string[] $media Array of item media
+     * @return $this
+     */
+    public function setMedia($media)
+    {
+        $this->container['media'] = $media;
+
+        return $this;
+    }
+
+    /**
+     * Gets buy
+     * @return string
+     */
+    public function getBuy()
+    {
+        return $this->container['buy'];
+    }
+
+    /**
+     * Sets buy
+     * @param string $buy Link to checkout page of item
+     * @return $this
+     */
+    public function setBuy($buy)
+    {
+        $this->container['buy'] = $buy;
 
         return $this;
     }
