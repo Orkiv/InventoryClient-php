@@ -167,6 +167,39 @@ class DefaultApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for itemGet
+     *
+     * .
+     *
+     */
+    public function testItemGet()
+    {
+
+    }
+
+    /**
+     * Test case for itemMediaDelete
+     *
+     * .
+     *
+     */
+    public function testItemMediaDelete()
+    {
+
+    }
+
+    /**
+     * Test case for itemMediaPost
+     *
+     * .
+     *
+     */
+    public function testItemMediaPost()
+    {
+
+    }
+
+    /**
      * Test case for itemPut
      *
      * .
@@ -200,17 +233,6 @@ class DefaultApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for itemsallfieldsPost
-     *
-     * .
-     *
-     */
-    public function testItemsallfieldsPost()
-    {
-
-    }
-
-    /**
      * Test case for ordersPost
      *
      * .
@@ -222,23 +244,23 @@ class DefaultApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for ordersServicesPost
+     *
+     * .
+     *
+     */
+    public function testOrdersServicesPost()
+    {
+
+    }
+
+    /**
      * Test case for queryPost
      *
      * .
      *
      */
     public function testQueryPost()
-    {
-
-    }
-
-    /**
-     * Test case for queryallfieldsPost
-     *
-     * .
-     *
-     */
-    public function testQueryallfieldsPost()
     {
 
     }
@@ -266,6 +288,17 @@ class DefaultApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for servicesOpenGet
+     *
+     * .
+     *
+     */
+    public function testServicesOpenGet()
+    {
+
+    }
+
+    /**
      * Test case for servicesPost
      *
      * .
@@ -283,6 +316,50 @@ class DefaultApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testServicesPut()
+    {
+
+    }
+
+    /**
+     * Test case for variationDelete
+     *
+     * .
+     *
+     */
+    public function testVariationDelete()
+    {
+
+    }
+
+    /**
+     * Test case for variationGet
+     *
+     * .
+     *
+     */
+    public function testVariationGet()
+    {
+
+    }
+
+    /**
+     * Test case for variationPost
+     *
+     * .
+     *
+     */
+    public function testVariationPost()
+    {
+
+    }
+
+    /**
+     * Test case for variationPut
+     *
+     * .
+     *
+     */
+    public function testVariationPut()
     {
 
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Dictionary
+ * ItemRequest
  *
  * PHP version 5
  *
@@ -44,7 +44,7 @@ namespace InventoryClient\Model;
 use \ArrayAccess;
 
 /**
- * Dictionary Class Doc Comment
+ * ItemRequest Class Doc Comment
  *
  * @category    Class */
 /** 
@@ -53,20 +53,26 @@ use \ArrayAccess;
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class Dictionary implements ArrayAccess
+class ItemRequest implements ArrayAccess
 {
     /**
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'Dictionary';
+    protected static $swaggerModelName = 'ItemRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = array(
-        
+        'id' => 'string',
+        'category' => 'string',
+        'desc' => 'string',
+        'name' => 'string',
+        'ordprice' => 'float',
+        'price' => 'string',
+        'quantity' => 'string'
     );
 
     public static function swaggerTypes()
@@ -79,7 +85,13 @@ class Dictionary implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = array(
-        
+        'id' => 'id',
+        'category' => 'category',
+        'desc' => 'desc',
+        'name' => 'name',
+        'ordprice' => 'ordprice',
+        'price' => 'price',
+        'quantity' => 'quantity'
     );
 
     public static function attributeMap()
@@ -92,7 +104,13 @@ class Dictionary implements ArrayAccess
      * @var string[]
      */
     protected static $setters = array(
-        
+        'id' => 'setId',
+        'category' => 'setCategory',
+        'desc' => 'setDesc',
+        'name' => 'setName',
+        'ordprice' => 'setOrdprice',
+        'price' => 'setPrice',
+        'quantity' => 'setQuantity'
     );
 
     public static function setters()
@@ -105,7 +123,13 @@ class Dictionary implements ArrayAccess
      * @var string[]
      */
     protected static $getters = array(
-        
+        'id' => 'getId',
+        'category' => 'getCategory',
+        'desc' => 'getDesc',
+        'name' => 'getName',
+        'ordprice' => 'getOrdprice',
+        'price' => 'getPrice',
+        'quantity' => 'getQuantity'
     );
 
     public static function getters()
@@ -129,6 +153,13 @@ class Dictionary implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['category'] = isset($data['category']) ? $data['category'] : null;
+        $this->container['desc'] = isset($data['desc']) ? $data['desc'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['ordprice'] = isset($data['ordprice']) ? $data['ordprice'] : null;
+        $this->container['price'] = isset($data['price']) ? $data['price'] : null;
+        $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
     }
 
     /**
@@ -153,6 +184,153 @@ class Dictionary implements ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets id
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     * @param string $id ID of item
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets category
+     * @return string
+     */
+    public function getCategory()
+    {
+        return $this->container['category'];
+    }
+
+    /**
+     * Sets category
+     * @param string $category Category ID of item
+     * @return $this
+     */
+    public function setCategory($category)
+    {
+        $this->container['category'] = $category;
+
+        return $this;
+    }
+
+    /**
+     * Gets desc
+     * @return string
+     */
+    public function getDesc()
+    {
+        return $this->container['desc'];
+    }
+
+    /**
+     * Sets desc
+     * @param string $desc Rich text description of item
+     * @return $this
+     */
+    public function setDesc($desc)
+    {
+        $this->container['desc'] = $desc;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     * @param string $name Name of item
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets ordprice
+     * @return float
+     */
+    public function getOrdprice()
+    {
+        return $this->container['ordprice'];
+    }
+
+    /**
+     * Sets ordprice
+     * @param float $ordprice Integer value of price
+     * @return $this
+     */
+    public function setOrdprice($ordprice)
+    {
+        $this->container['ordprice'] = $ordprice;
+
+        return $this;
+    }
+
+    /**
+     * Gets price
+     * @return string
+     */
+    public function getPrice()
+    {
+        return $this->container['price'];
+    }
+
+    /**
+     * Sets price
+     * @param string $price String value of price
+     * @return $this
+     */
+    public function setPrice($price)
+    {
+        $this->container['price'] = $price;
+
+        return $this;
+    }
+
+    /**
+     * Gets quantity
+     * @return string
+     */
+    public function getQuantity()
+    {
+        return $this->container['quantity'];
+    }
+
+    /**
+     * Sets quantity
+     * @param string $quantity Inventory quantity
+     * @return $this
+     */
+    public function setQuantity($quantity)
+    {
+        $this->container['quantity'] = $quantity;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset

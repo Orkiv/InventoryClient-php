@@ -1,6 +1,6 @@
 <?php
 /**
- * ItemTest
+ * OrderRequestTest
  *
  * PHP version 5
  *
@@ -42,17 +42,17 @@
 namespace InventoryClient;
 
 /**
- * ItemTest Class Doc Comment
+ * OrderRequestTest Class Doc Comment
  *
  * @category    Class */
-// * @description Item
+// * @description OrderRequest
 /**
  * @package     InventoryClient
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ItemTest extends \PHPUnit_Framework_TestCase
+class OrderRequestTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -88,89 +88,161 @@ class ItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "Item"
+     * Test "OrderRequest"
      */
-    public function testItem()
+    public function testOrderRequest()
     {
 
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "order_id"
      */
-    public function testPropertyId()
+    public function testPropertyOrderId()
     {
 
     }
 
     /**
-     * Test attribute "category"
+     * Test attribute "info_email"
      */
-    public function testPropertyCategory()
+    public function testPropertyInfoEmail()
     {
 
     }
 
     /**
-     * Test attribute "desc"
+     * Test attribute "info_first"
      */
-    public function testPropertyDesc()
+    public function testPropertyInfoFirst()
     {
 
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "info_last"
      */
-    public function testPropertyName()
+    public function testPropertyInfoLast()
     {
 
     }
 
     /**
-     * Test attribute "ordprice"
+     * Test attribute "phone"
      */
-    public function testPropertyOrdprice()
+    public function testPropertyPhone()
     {
 
     }
 
     /**
-     * Test attribute "price"
+     * Test attribute "shipset"
      */
-    public function testPropertyPrice()
+    public function testPropertyShipset()
     {
 
     }
 
     /**
-     * Test attribute "variations"
+     * Test attribute "info_adr1"
      */
-    public function testPropertyVariations()
+    public function testPropertyInfoAdr1()
     {
 
     }
 
     /**
-     * Test attribute "quantity"
+     * Test attribute "info_adr2"
      */
-    public function testPropertyQuantity()
+    public function testPropertyInfoAdr2()
     {
 
     }
 
     /**
-     * Test attribute "media"
+     * Test attribute "info_cty"
      */
-    public function testPropertyMedia()
+    public function testPropertyInfoCty()
     {
 
     }
 
     /**
-     * Test attribute "buy"
+     * Test attribute "info_zip"
      */
-    public function testPropertyBuy()
+    public function testPropertyInfoZip()
+    {
+
+    }
+
+    /**
+     * Test attribute "state"
+     */
+    public function testPropertyState()
+    {
+
+    }
+
+    /**
+     * Test attribute "info_sadr1"
+     */
+    public function testPropertyInfoSadr1()
+    {
+
+    }
+
+    /**
+     * Test attribute "info_sadr2"
+     */
+    public function testPropertyInfoSadr2()
+    {
+
+    }
+
+    /**
+     * Test attribute "info_scty"
+     */
+    public function testPropertyInfoScty()
+    {
+
+    }
+
+    /**
+     * Test attribute "info_szip"
+     */
+    public function testPropertyInfoSzip()
+    {
+
+    }
+
+    /**
+     * Test attribute "sstate"
+     */
+    public function testPropertySstate()
+    {
+
+    }
+
+    /**
+     * Test attribute "tax_amount"
+     */
+    public function testPropertyTaxAmount()
+    {
+
+    }
+
+    /**
+     * Test attribute "shipping_amount"
+     */
+    public function testPropertyShippingAmount()
+    {
+
+    }
+
+    /**
+     * Test attribute "amount_total"
+     */
+    public function testPropertyAmountTotal()
     {
 
     }

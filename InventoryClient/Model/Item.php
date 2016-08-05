@@ -72,6 +72,7 @@ class Item implements ArrayAccess
         'name' => 'string',
         'ordprice' => 'float',
         'price' => 'string',
+        'variations' => '\InventoryClient\Model\Variation[]',
         'quantity' => 'string',
         'media' => 'string[]',
         'buy' => 'string'
@@ -93,6 +94,7 @@ class Item implements ArrayAccess
         'name' => 'name',
         'ordprice' => 'ordprice',
         'price' => 'price',
+        'variations' => 'variations',
         'quantity' => 'quantity',
         'media' => 'media',
         'buy' => 'Buy'
@@ -114,6 +116,7 @@ class Item implements ArrayAccess
         'name' => 'setName',
         'ordprice' => 'setOrdprice',
         'price' => 'setPrice',
+        'variations' => 'setVariations',
         'quantity' => 'setQuantity',
         'media' => 'setMedia',
         'buy' => 'setBuy'
@@ -135,6 +138,7 @@ class Item implements ArrayAccess
         'name' => 'getName',
         'ordprice' => 'getOrdprice',
         'price' => 'getPrice',
+        'variations' => 'getVariations',
         'quantity' => 'getQuantity',
         'media' => 'getMedia',
         'buy' => 'getBuy'
@@ -167,6 +171,7 @@ class Item implements ArrayAccess
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['ordprice'] = isset($data['ordprice']) ? $data['ordprice'] : null;
         $this->container['price'] = isset($data['price']) ? $data['price'] : null;
+        $this->container['variations'] = isset($data['variations']) ? $data['variations'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
         $this->container['media'] = isset($data['media']) ? $data['media'] : null;
         $this->container['buy'] = isset($data['buy']) ? $data['buy'] : null;
@@ -317,6 +322,27 @@ class Item implements ArrayAccess
     public function setPrice($price)
     {
         $this->container['price'] = $price;
+
+        return $this;
+    }
+
+    /**
+     * Gets variations
+     * @return \InventoryClient\Model\Variation[]
+     */
+    public function getVariations()
+    {
+        return $this->container['variations'];
+    }
+
+    /**
+     * Sets variations
+     * @param \InventoryClient\Model\Variation[] $variations
+     * @return $this
+     */
+    public function setVariations($variations)
+    {
+        $this->container['variations'] = $variations;
 
         return $this;
     }

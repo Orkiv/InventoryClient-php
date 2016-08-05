@@ -1,6 +1,6 @@
 <?php
 /**
- * ItemTest
+ * ServiceRequestTest
  *
  * PHP version 5
  *
@@ -42,17 +42,17 @@
 namespace InventoryClient;
 
 /**
- * ItemTest Class Doc Comment
+ * ServiceRequestTest Class Doc Comment
  *
  * @category    Class */
-// * @description Item
+// * @description ServiceRequest
 /**
  * @package     InventoryClient
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ItemTest extends \PHPUnit_Framework_TestCase
+class ServiceRequestTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -88,33 +88,9 @@ class ItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "Item"
+     * Test "ServiceRequest"
      */
-    public function testItem()
-    {
-
-    }
-
-    /**
-     * Test attribute "id"
-     */
-    public function testPropertyId()
-    {
-
-    }
-
-    /**
-     * Test attribute "category"
-     */
-    public function testPropertyCategory()
-    {
-
-    }
-
-    /**
-     * Test attribute "desc"
-     */
-    public function testPropertyDesc()
+    public function testServiceRequest()
     {
 
     }
@@ -128,9 +104,9 @@ class ItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "ordprice"
+     * Test attribute "desc"
      */
-    public function testPropertyOrdprice()
+    public function testPropertyDesc()
     {
 
     }
@@ -144,33 +120,9 @@ class ItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "variations"
+     * Test attribute "recurpric"
      */
-    public function testPropertyVariations()
-    {
-
-    }
-
-    /**
-     * Test attribute "quantity"
-     */
-    public function testPropertyQuantity()
-    {
-
-    }
-
-    /**
-     * Test attribute "media"
-     */
-    public function testPropertyMedia()
-    {
-
-    }
-
-    /**
-     * Test attribute "buy"
-     */
-    public function testPropertyBuy()
+    public function testPropertyRecurpric()
     {
 
     }

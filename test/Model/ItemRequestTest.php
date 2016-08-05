@@ -1,6 +1,6 @@
 <?php
 /**
- * DictionaryTest
+ * ItemRequestTest
  *
  * PHP version 5
  *
@@ -42,17 +42,17 @@
 namespace InventoryClient;
 
 /**
- * DictionaryTest Class Doc Comment
+ * ItemRequestTest Class Doc Comment
  *
  * @category    Class */
-// * @description Dictionary
+// * @description ItemRequest
 /**
  * @package     InventoryClient
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class DictionaryTest extends \PHPUnit_Framework_TestCase
+class ItemRequestTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -88,9 +88,65 @@ class DictionaryTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "Dictionary"
+     * Test "ItemRequest"
      */
-    public function testDictionary()
+    public function testItemRequest()
+    {
+
+    }
+
+    /**
+     * Test attribute "id"
+     */
+    public function testPropertyId()
+    {
+
+    }
+
+    /**
+     * Test attribute "category"
+     */
+    public function testPropertyCategory()
+    {
+
+    }
+
+    /**
+     * Test attribute "desc"
+     */
+    public function testPropertyDesc()
+    {
+
+    }
+
+    /**
+     * Test attribute "name"
+     */
+    public function testPropertyName()
+    {
+
+    }
+
+    /**
+     * Test attribute "ordprice"
+     */
+    public function testPropertyOrdprice()
+    {
+
+    }
+
+    /**
+     * Test attribute "price"
+     */
+    public function testPropertyPrice()
+    {
+
+    }
+
+    /**
+     * Test attribute "quantity"
+     */
+    public function testPropertyQuantity()
     {
 
     }

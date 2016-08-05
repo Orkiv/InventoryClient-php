@@ -287,7 +287,7 @@ class DefaultApi
      *
      * 
      *
-     * @param \InventoryClient\Model\Dictionary $query Category to query against system (optional)
+     * @param \InventoryClient\Model\Category $query Category to query against system (optional)
      * @return \InventoryClient\Model\Category[]
      * @throws \InventoryClient\ApiException on non-2xx response
      */
@@ -302,7 +302,7 @@ class DefaultApi
      *
      * 
      *
-     * @param \InventoryClient\Model\Dictionary $query Category to query against system (optional)
+     * @param \InventoryClient\Model\Category $query Category to query against system (optional)
      * @return Array of \InventoryClient\Model\Category[], HTTP status code, HTTP response headers (array of strings)
      * @throws \InventoryClient\ApiException on non-2xx response
      */
@@ -485,7 +485,7 @@ class DefaultApi
      *
      * 
      *
-     * @param \InventoryClient\Model\Item $item Item to create. (required)
+     * @param \InventoryClient\Model\ItemRequest $item Item to create. (required)
      * @return \InventoryClient\Model\Item
      * @throws \InventoryClient\ApiException on non-2xx response
      */
@@ -500,7 +500,7 @@ class DefaultApi
      *
      * 
      *
-     * @param \InventoryClient\Model\Item $item Item to create. (required)
+     * @param \InventoryClient\Model\ItemRequest $item Item to create. (required)
      * @return Array of \InventoryClient\Model\Item, HTTP status code, HTTP response headers (array of strings)
      * @throws \InventoryClient\ApiException on non-2xx response
      */
@@ -581,7 +581,7 @@ class DefaultApi
      *
      * 
      *
-     * @param \InventoryClient\Model\Item[] $items Items to create. (required)
+     * @param \InventoryClient\Model\ItemRequest[] $items Items to create. (required)
      * @return \InventoryClient\Model\Response
      * @throws \InventoryClient\ApiException on non-2xx response
      */
@@ -596,7 +596,7 @@ class DefaultApi
      *
      * 
      *
-     * @param \InventoryClient\Model\Item[] $items Items to create. (required)
+     * @param \InventoryClient\Model\ItemRequest[] $items Items to create. (required)
      * @return Array of \InventoryClient\Model\Response, HTTP status code, HTTP response headers (array of strings)
      * @throws \InventoryClient\ApiException on non-2xx response
      */
@@ -768,12 +768,313 @@ class DefaultApi
     }
 
     /**
+     * Operation itemGet
+     *
+     * 
+     *
+     * @param string $id Item ID to open. (required)
+     * @return \InventoryClient\Model\Item
+     * @throws \InventoryClient\ApiException on non-2xx response
+     */
+    public function itemGet($id)
+    {
+        list($response) = $this->itemGetWithHttpInfo($id);
+        return $response;
+    }
+
+    /**
+     * Operation itemGetWithHttpInfo
+     *
+     * 
+     *
+     * @param string $id Item ID to open. (required)
+     * @return Array of \InventoryClient\Model\Item, HTTP status code, HTTP response headers (array of strings)
+     * @throws \InventoryClient\ApiException on non-2xx response
+     */
+    public function itemGetWithHttpInfo($id)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling itemGet');
+        }
+        // parse inputs
+        $resourcePath = "/item/";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array());
+
+        // query params
+        if ($id !== null) {
+            $queryParams['id'] = $this->apiClient->getSerializer()->toQueryValue($id);
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('APIKey');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['APIKey'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('accountid');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['accountid'] = $apiKey;
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\InventoryClient\Model\Item',
+                '/item/'
+            );
+
+            return array($this->apiClient->getSerializer()->deserialize($response, '\InventoryClient\Model\Item', $httpHeader), $statusCode, $httpHeader);
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Item', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                default:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Error', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation itemMediaDelete
+     *
+     * 
+     *
+     * @param string $imageurl URL of image to remove (required)
+     * @return \InventoryClient\Model\Response
+     * @throws \InventoryClient\ApiException on non-2xx response
+     */
+    public function itemMediaDelete($imageurl)
+    {
+        list($response) = $this->itemMediaDeleteWithHttpInfo($imageurl);
+        return $response;
+    }
+
+    /**
+     * Operation itemMediaDeleteWithHttpInfo
+     *
+     * 
+     *
+     * @param string $imageurl URL of image to remove (required)
+     * @return Array of \InventoryClient\Model\Response, HTTP status code, HTTP response headers (array of strings)
+     * @throws \InventoryClient\ApiException on non-2xx response
+     */
+    public function itemMediaDeleteWithHttpInfo($imageurl)
+    {
+        // verify the required parameter 'imageurl' is set
+        if ($imageurl === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $imageurl when calling itemMediaDelete');
+        }
+        // parse inputs
+        $resourcePath = "/item-media/";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array());
+
+        // query params
+        if ($imageurl !== null) {
+            $queryParams['imageurl'] = $this->apiClient->getSerializer()->toQueryValue($imageurl);
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('APIKey');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['APIKey'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('accountid');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['accountid'] = $apiKey;
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'DELETE',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\InventoryClient\Model\Response',
+                '/item-media/'
+            );
+
+            return array($this->apiClient->getSerializer()->deserialize($response, '\InventoryClient\Model\Response', $httpHeader), $statusCode, $httpHeader);
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                default:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Error', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation itemMediaPost
+     *
+     * 
+     *
+     * @param string $id Valid item id to bind image to. (required)
+     * @param \SplFileObject $image Image. (required)
+     * @return string
+     * @throws \InventoryClient\ApiException on non-2xx response
+     */
+    public function itemMediaPost($id, $image)
+    {
+        list($response) = $this->itemMediaPostWithHttpInfo($id, $image);
+        return $response;
+    }
+
+    /**
+     * Operation itemMediaPostWithHttpInfo
+     *
+     * 
+     *
+     * @param string $id Valid item id to bind image to. (required)
+     * @param \SplFileObject $image Image. (required)
+     * @return Array of string, HTTP status code, HTTP response headers (array of strings)
+     * @throws \InventoryClient\ApiException on non-2xx response
+     */
+    public function itemMediaPostWithHttpInfo($id, $image)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling itemMediaPost');
+        }
+        // verify the required parameter 'image' is set
+        if ($image === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $image when calling itemMediaPost');
+        }
+        // parse inputs
+        $resourcePath = "/item-media/";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array('multipart/form-data','application/x-www-form-urlencoded'));
+
+        // query params
+        if ($id !== null) {
+            $queryParams['id'] = $this->apiClient->getSerializer()->toQueryValue($id);
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        // form params
+        if ($image !== null) {
+            // PHP 5.5 introduced a CurlFile object that deprecates the old @filename syntax
+            // See: https://wiki.php.net/rfc/curl-file-upload
+            if (function_exists('curl_file_create')) {
+                $formParams['image'] = curl_file_create($this->apiClient->getSerializer()->toFormValue($image));
+            } else {
+                $formParams['image'] = '@' . $this->apiClient->getSerializer()->toFormValue($image);
+            }
+        }
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('APIKey');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['APIKey'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('accountid');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['accountid'] = $apiKey;
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                'string',
+                '/item-media/'
+            );
+
+            return array($this->apiClient->getSerializer()->deserialize($response, 'string', $httpHeader), $statusCode, $httpHeader);
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), 'string', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                default:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Error', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation itemPut
      *
      * 
      *
      * @param string $id item id to update. (required)
-     * @param \InventoryClient\Model\Dictionary $item New item information. (required)
+     * @param \InventoryClient\Model\ItemRequest $item New item information. (required)
      * @return \InventoryClient\Model\Response
      * @throws \InventoryClient\ApiException on non-2xx response
      */
@@ -789,7 +1090,7 @@ class DefaultApi
      * 
      *
      * @param string $id item id to update. (required)
-     * @param \InventoryClient\Model\Dictionary $item New item information. (required)
+     * @param \InventoryClient\Model\ItemRequest $item New item information. (required)
      * @return Array of \InventoryClient\Model\Response, HTTP status code, HTTP response headers (array of strings)
      * @throws \InventoryClient\ApiException on non-2xx response
      */
@@ -878,13 +1179,15 @@ class DefaultApi
      *
      * 
      *
-     * @param \InventoryClient\Model\Dictionary $query Item to query against system. (optional)
+     * @param float $minprice Min price of items to find (optional)
+     * @param float $maxprice Max price of items to find (optional)
+     * @param \InventoryClient\Model\ItemRequest $query Item to query against system. (optional)
      * @return float
      * @throws \InventoryClient\ApiException on non-2xx response
      */
-    public function itemsCountPost($query = null)
+    public function itemsCountPost($minprice = null, $maxprice = null, $query = null)
     {
-        list($response) = $this->itemsCountPostWithHttpInfo($query);
+        list($response) = $this->itemsCountPostWithHttpInfo($minprice, $maxprice, $query);
         return $response;
     }
 
@@ -893,11 +1196,13 @@ class DefaultApi
      *
      * 
      *
-     * @param \InventoryClient\Model\Dictionary $query Item to query against system. (optional)
+     * @param float $minprice Min price of items to find (optional)
+     * @param float $maxprice Max price of items to find (optional)
+     * @param \InventoryClient\Model\ItemRequest $query Item to query against system. (optional)
      * @return Array of float, HTTP status code, HTTP response headers (array of strings)
      * @throws \InventoryClient\ApiException on non-2xx response
      */
-    public function itemsCountPostWithHttpInfo($query = null)
+    public function itemsCountPostWithHttpInfo($minprice = null, $maxprice = null, $query = null)
     {
         // parse inputs
         $resourcePath = "/items/count/";
@@ -911,6 +1216,14 @@ class DefaultApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array());
 
+        // query params
+        if ($minprice !== null) {
+            $queryParams['minprice'] = $this->apiClient->getSerializer()->toQueryValue($minprice);
+        }
+        // query params
+        if ($maxprice !== null) {
+            $queryParams['maxprice'] = $this->apiClient->getSerializer()->toQueryValue($maxprice);
+        }
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
@@ -970,13 +1283,15 @@ class DefaultApi
      *
      * 
      *
-     * @param \InventoryClient\Model\Dictionary $query Item to query against system. (optional)
+     * @param float $minprice Min price of items to find (optional)
+     * @param float $maxprice Max price of items to find (optional)
+     * @param \InventoryClient\Model\ItemRequest $query Item to query against system. (optional)
      * @return \InventoryClient\Model\Item[]
      * @throws \InventoryClient\ApiException on non-2xx response
      */
-    public function itemsPost($query = null)
+    public function itemsPost($minprice = null, $maxprice = null, $query = null)
     {
-        list($response) = $this->itemsPostWithHttpInfo($query);
+        list($response) = $this->itemsPostWithHttpInfo($minprice, $maxprice, $query);
         return $response;
     }
 
@@ -985,11 +1300,13 @@ class DefaultApi
      *
      * 
      *
-     * @param \InventoryClient\Model\Dictionary $query Item to query against system. (optional)
+     * @param float $minprice Min price of items to find (optional)
+     * @param float $maxprice Max price of items to find (optional)
+     * @param \InventoryClient\Model\ItemRequest $query Item to query against system. (optional)
      * @return Array of \InventoryClient\Model\Item[], HTTP status code, HTTP response headers (array of strings)
      * @throws \InventoryClient\ApiException on non-2xx response
      */
-    public function itemsPostWithHttpInfo($query = null)
+    public function itemsPostWithHttpInfo($minprice = null, $maxprice = null, $query = null)
     {
         // parse inputs
         $resourcePath = "/items/";
@@ -1003,6 +1320,14 @@ class DefaultApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array());
 
+        // query params
+        if ($minprice !== null) {
+            $queryParams['minprice'] = $this->apiClient->getSerializer()->toQueryValue($minprice);
+        }
+        // query params
+        if ($maxprice !== null) {
+            $queryParams['maxprice'] = $this->apiClient->getSerializer()->toQueryValue($maxprice);
+        }
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
@@ -1058,103 +1383,11 @@ class DefaultApi
     }
 
     /**
-     * Operation itemsallfieldsPost
-     *
-     * 
-     *
-     * @param \InventoryClient\Model\Dictionary $query Item to query against system. (optional)
-     * @return \InventoryClient\Model\Dictionary[]
-     * @throws \InventoryClient\ApiException on non-2xx response
-     */
-    public function itemsallfieldsPost($query = null)
-    {
-        list($response) = $this->itemsallfieldsPostWithHttpInfo($query);
-        return $response;
-    }
-
-    /**
-     * Operation itemsallfieldsPostWithHttpInfo
-     *
-     * 
-     *
-     * @param \InventoryClient\Model\Dictionary $query Item to query against system. (optional)
-     * @return Array of \InventoryClient\Model\Dictionary[], HTTP status code, HTTP response headers (array of strings)
-     * @throws \InventoryClient\ApiException on non-2xx response
-     */
-    public function itemsallfieldsPostWithHttpInfo($query = null)
-    {
-        // parse inputs
-        $resourcePath = "/items/?allfields";
-        $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json'));
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array());
-
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        // body params
-        $_tempBody = null;
-        if (isset($query)) {
-            $_tempBody = $query;
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->apiClient->getApiKeyWithPrefix('APIKey');
-        if (strlen($apiKey) !== 0) {
-            $headerParams['APIKey'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->apiClient->getApiKeyWithPrefix('accountid');
-        if (strlen($apiKey) !== 0) {
-            $headerParams['accountid'] = $apiKey;
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'POST',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\InventoryClient\Model\Dictionary[]',
-                '/items/?allfields'
-            );
-
-            return array($this->apiClient->getSerializer()->deserialize($response, '\InventoryClient\Model\Dictionary[]', $httpHeader), $statusCode, $httpHeader);
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Dictionary[]', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Error', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
      * Operation ordersPost
      *
      * 
      *
-     * @param \InventoryClient\Model\Dictionary $query Order to query against system. (optional)
+     * @param \InventoryClient\Model\OrderRequest $query Order to query against item invoices. (optional)
      * @return \InventoryClient\Model\Order[]
      * @throws \InventoryClient\ApiException on non-2xx response
      */
@@ -1169,7 +1402,7 @@ class DefaultApi
      *
      * 
      *
-     * @param \InventoryClient\Model\Dictionary $query Order to query against system. (optional)
+     * @param \InventoryClient\Model\OrderRequest $query Order to query against item invoices. (optional)
      * @return Array of \InventoryClient\Model\Order[], HTTP status code, HTTP response headers (array of strings)
      * @throws \InventoryClient\ApiException on non-2xx response
      */
@@ -1242,6 +1475,98 @@ class DefaultApi
     }
 
     /**
+     * Operation ordersServicesPost
+     *
+     * 
+     *
+     * @param \InventoryClient\Model\OrderRequest $query Order to query against service invoices. (optional)
+     * @return \InventoryClient\Model\Order[]
+     * @throws \InventoryClient\ApiException on non-2xx response
+     */
+    public function ordersServicesPost($query = null)
+    {
+        list($response) = $this->ordersServicesPostWithHttpInfo($query);
+        return $response;
+    }
+
+    /**
+     * Operation ordersServicesPostWithHttpInfo
+     *
+     * 
+     *
+     * @param \InventoryClient\Model\OrderRequest $query Order to query against service invoices. (optional)
+     * @return Array of \InventoryClient\Model\Order[], HTTP status code, HTTP response headers (array of strings)
+     * @throws \InventoryClient\ApiException on non-2xx response
+     */
+    public function ordersServicesPostWithHttpInfo($query = null)
+    {
+        // parse inputs
+        $resourcePath = "/orders/services/";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array());
+
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        // body params
+        $_tempBody = null;
+        if (isset($query)) {
+            $_tempBody = $query;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('APIKey');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['APIKey'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('accountid');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['accountid'] = $apiKey;
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\InventoryClient\Model\Order[]',
+                '/orders/services/'
+            );
+
+            return array($this->apiClient->getSerializer()->deserialize($response, '\InventoryClient\Model\Order[]', $httpHeader), $statusCode, $httpHeader);
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Order[]', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                default:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Error', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation queryPost
      *
      * 
@@ -1250,9 +1575,9 @@ class DefaultApi
      * @param string $categoryid Get items under specified category id. (optional)
      * @param string $sort Comma delimited Sort string. ie ; +ordprice. Please use number based fields only (optional)
      * @param string $search Performs a regex pattern match against the items within your account (optional)
-     * @param float $minprice Min price in hundreds. (optional)
-     * @param float $maxprice Max price in hudreds. (optional)
-     * @param \InventoryClient\Model\Dictionary $query Custom parameters to query against system. (optional)
+     * @param float $minprice Min price in hundreds (cents). (optional)
+     * @param float $maxprice Max price in hundreds (cents). (optional)
+     * @param \InventoryClient\Model\ItemRequest $query Custom parameters to query against system. (optional)
      * @return \InventoryClient\Model\Item[]
      * @throws \InventoryClient\ApiException on non-2xx response
      */
@@ -1271,9 +1596,9 @@ class DefaultApi
      * @param string $categoryid Get items under specified category id. (optional)
      * @param string $sort Comma delimited Sort string. ie ; +ordprice. Please use number based fields only (optional)
      * @param string $search Performs a regex pattern match against the items within your account (optional)
-     * @param float $minprice Min price in hundreds. (optional)
-     * @param float $maxprice Max price in hudreds. (optional)
-     * @param \InventoryClient\Model\Dictionary $query Custom parameters to query against system. (optional)
+     * @param float $minprice Min price in hundreds (cents). (optional)
+     * @param float $maxprice Max price in hundreds (cents). (optional)
+     * @param \InventoryClient\Model\ItemRequest $query Custom parameters to query against system. (optional)
      * @return Array of \InventoryClient\Model\Item[], HTTP status code, HTTP response headers (array of strings)
      * @throws \InventoryClient\ApiException on non-2xx response
      */
@@ -1357,134 +1682,6 @@ class DefaultApi
             switch ($e->getCode()) {
                 case 200:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Item[]', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                default:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Error', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation queryallfieldsPost
-     *
-     * 
-     *
-     * @param float $page Current page index. (optional)
-     * @param string $categoryid Get items under specified category id. (optional)
-     * @param string $sort Comma delimited Sort string. ie ; +ordprice. Please use number based fields only (optional)
-     * @param string $search Performs a regex pattern match against the items within your account (optional)
-     * @param float $minprice Min price in hundreds. (optional)
-     * @param float $maxprice Max price in hudreds. (optional)
-     * @param \InventoryClient\Model\Dictionary $query Custom parameters to query against system. (optional)
-     * @return \InventoryClient\Model\Dictionary[]
-     * @throws \InventoryClient\ApiException on non-2xx response
-     */
-    public function queryallfieldsPost($page = null, $categoryid = null, $sort = null, $search = null, $minprice = null, $maxprice = null, $query = null)
-    {
-        list($response) = $this->queryallfieldsPostWithHttpInfo($page, $categoryid, $sort, $search, $minprice, $maxprice, $query);
-        return $response;
-    }
-
-    /**
-     * Operation queryallfieldsPostWithHttpInfo
-     *
-     * 
-     *
-     * @param float $page Current page index. (optional)
-     * @param string $categoryid Get items under specified category id. (optional)
-     * @param string $sort Comma delimited Sort string. ie ; +ordprice. Please use number based fields only (optional)
-     * @param string $search Performs a regex pattern match against the items within your account (optional)
-     * @param float $minprice Min price in hundreds. (optional)
-     * @param float $maxprice Max price in hudreds. (optional)
-     * @param \InventoryClient\Model\Dictionary $query Custom parameters to query against system. (optional)
-     * @return Array of \InventoryClient\Model\Dictionary[], HTTP status code, HTTP response headers (array of strings)
-     * @throws \InventoryClient\ApiException on non-2xx response
-     */
-    public function queryallfieldsPostWithHttpInfo($page = null, $categoryid = null, $sort = null, $search = null, $minprice = null, $maxprice = null, $query = null)
-    {
-        // parse inputs
-        $resourcePath = "/query/?allfields";
-        $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json'));
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array());
-
-        // query params
-        if ($page !== null) {
-            $queryParams['page'] = $this->apiClient->getSerializer()->toQueryValue($page);
-        }
-        // query params
-        if ($categoryid !== null) {
-            $queryParams['categoryid'] = $this->apiClient->getSerializer()->toQueryValue($categoryid);
-        }
-        // query params
-        if ($sort !== null) {
-            $queryParams['sort'] = $this->apiClient->getSerializer()->toQueryValue($sort);
-        }
-        // query params
-        if ($search !== null) {
-            $queryParams['search'] = $this->apiClient->getSerializer()->toQueryValue($search);
-        }
-        // query params
-        if ($minprice !== null) {
-            $queryParams['minprice'] = $this->apiClient->getSerializer()->toQueryValue($minprice);
-        }
-        // query params
-        if ($maxprice !== null) {
-            $queryParams['maxprice'] = $this->apiClient->getSerializer()->toQueryValue($maxprice);
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        // body params
-        $_tempBody = null;
-        if (isset($query)) {
-            $_tempBody = $query;
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->apiClient->getApiKeyWithPrefix('APIKey');
-        if (strlen($apiKey) !== 0) {
-            $headerParams['APIKey'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->apiClient->getApiKeyWithPrefix('accountid');
-        if (strlen($apiKey) !== 0) {
-            $headerParams['accountid'] = $apiKey;
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'POST',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\InventoryClient\Model\Dictionary[]',
-                '/query/?allfields'
-            );
-
-            return array($this->apiClient->getSerializer()->deserialize($response, '\InventoryClient\Model\Dictionary[]', $httpHeader), $statusCode, $httpHeader);
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Dictionary[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:
@@ -1678,11 +1875,106 @@ class DefaultApi
     }
 
     /**
+     * Operation servicesOpenGet
+     *
+     * 
+     *
+     * @param string $id ID of service to open (required)
+     * @return \InventoryClient\Model\Service
+     * @throws \InventoryClient\ApiException on non-2xx response
+     */
+    public function servicesOpenGet($id)
+    {
+        list($response) = $this->servicesOpenGetWithHttpInfo($id);
+        return $response;
+    }
+
+    /**
+     * Operation servicesOpenGetWithHttpInfo
+     *
+     * 
+     *
+     * @param string $id ID of service to open (required)
+     * @return Array of \InventoryClient\Model\Service, HTTP status code, HTTP response headers (array of strings)
+     * @throws \InventoryClient\ApiException on non-2xx response
+     */
+    public function servicesOpenGetWithHttpInfo($id)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling servicesOpenGet');
+        }
+        // parse inputs
+        $resourcePath = "/services/open/";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array());
+
+        // query params
+        if ($id !== null) {
+            $queryParams['id'] = $this->apiClient->getSerializer()->toQueryValue($id);
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('APIKey');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['APIKey'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('accountid');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['accountid'] = $apiKey;
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\InventoryClient\Model\Service',
+                '/services/open/'
+            );
+
+            return array($this->apiClient->getSerializer()->deserialize($response, '\InventoryClient\Model\Service', $httpHeader), $statusCode, $httpHeader);
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Service', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                default:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Error', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation servicesPost
      *
      * 
      *
-     * @param \InventoryClient\Model\Service $service Service to create. (required)
+     * @param \InventoryClient\Model\ServiceRequest $service Service to create. (required)
      * @return \InventoryClient\Model\Service
      * @throws \InventoryClient\ApiException on non-2xx response
      */
@@ -1697,7 +1989,7 @@ class DefaultApi
      *
      * 
      *
-     * @param \InventoryClient\Model\Service $service Service to create. (required)
+     * @param \InventoryClient\Model\ServiceRequest $service Service to create. (required)
      * @return Array of \InventoryClient\Model\Service, HTTP status code, HTTP response headers (array of strings)
      * @throws \InventoryClient\ApiException on non-2xx response
      */
@@ -1779,7 +2071,7 @@ class DefaultApi
      * 
      *
      * @param string $id ID of the service to update (required)
-     * @param \InventoryClient\Model\Service $service New service data to set. (required)
+     * @param \InventoryClient\Model\ServiceRequest $service New service data to set. (required)
      * @return \InventoryClient\Model\Response
      * @throws \InventoryClient\ApiException on non-2xx response
      */
@@ -1795,7 +2087,7 @@ class DefaultApi
      * 
      *
      * @param string $id ID of the service to update (required)
-     * @param \InventoryClient\Model\Service $service New service data to set. (required)
+     * @param \InventoryClient\Model\ServiceRequest $service New service data to set. (required)
      * @return Array of \InventoryClient\Model\Response, HTTP status code, HTTP response headers (array of strings)
      * @throws \InventoryClient\ApiException on non-2xx response
      */
@@ -1860,6 +2152,408 @@ class DefaultApi
                 $headerParams,
                 '\InventoryClient\Model\Response',
                 '/services/'
+            );
+
+            return array($this->apiClient->getSerializer()->deserialize($response, '\InventoryClient\Model\Response', $httpHeader), $statusCode, $httpHeader);
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                default:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Error', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation variationDelete
+     *
+     * 
+     *
+     * @param string $id variation id to remove (required)
+     * @return \InventoryClient\Model\Response
+     * @throws \InventoryClient\ApiException on non-2xx response
+     */
+    public function variationDelete($id)
+    {
+        list($response) = $this->variationDeleteWithHttpInfo($id);
+        return $response;
+    }
+
+    /**
+     * Operation variationDeleteWithHttpInfo
+     *
+     * 
+     *
+     * @param string $id variation id to remove (required)
+     * @return Array of \InventoryClient\Model\Response, HTTP status code, HTTP response headers (array of strings)
+     * @throws \InventoryClient\ApiException on non-2xx response
+     */
+    public function variationDeleteWithHttpInfo($id)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling variationDelete');
+        }
+        // parse inputs
+        $resourcePath = "/variation/";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array());
+
+        // query params
+        if ($id !== null) {
+            $queryParams['id'] = $this->apiClient->getSerializer()->toQueryValue($id);
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('APIKey');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['APIKey'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('accountid');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['accountid'] = $apiKey;
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'DELETE',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\InventoryClient\Model\Response',
+                '/variation/'
+            );
+
+            return array($this->apiClient->getSerializer()->deserialize($response, '\InventoryClient\Model\Response', $httpHeader), $statusCode, $httpHeader);
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                default:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Error', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation variationGet
+     *
+     * 
+     *
+     * @param string $id Variation ID to open. (required)
+     * @return \InventoryClient\Model\Variation
+     * @throws \InventoryClient\ApiException on non-2xx response
+     */
+    public function variationGet($id)
+    {
+        list($response) = $this->variationGetWithHttpInfo($id);
+        return $response;
+    }
+
+    /**
+     * Operation variationGetWithHttpInfo
+     *
+     * 
+     *
+     * @param string $id Variation ID to open. (required)
+     * @return Array of \InventoryClient\Model\Variation, HTTP status code, HTTP response headers (array of strings)
+     * @throws \InventoryClient\ApiException on non-2xx response
+     */
+    public function variationGetWithHttpInfo($id)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling variationGet');
+        }
+        // parse inputs
+        $resourcePath = "/variation/";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array());
+
+        // query params
+        if ($id !== null) {
+            $queryParams['id'] = $this->apiClient->getSerializer()->toQueryValue($id);
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('APIKey');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['APIKey'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('accountid');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['accountid'] = $apiKey;
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\InventoryClient\Model\Variation',
+                '/variation/'
+            );
+
+            return array($this->apiClient->getSerializer()->deserialize($response, '\InventoryClient\Model\Variation', $httpHeader), $statusCode, $httpHeader);
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Variation', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                default:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Error', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation variationPost
+     *
+     * 
+     *
+     * @param string $id Valid item id to bind variation to. (required)
+     * @param \InventoryClient\Model\Variation $item Variation information. (required)
+     * @return \InventoryClient\Model\Response
+     * @throws \InventoryClient\ApiException on non-2xx response
+     */
+    public function variationPost($id, $item)
+    {
+        list($response) = $this->variationPostWithHttpInfo($id, $item);
+        return $response;
+    }
+
+    /**
+     * Operation variationPostWithHttpInfo
+     *
+     * 
+     *
+     * @param string $id Valid item id to bind variation to. (required)
+     * @param \InventoryClient\Model\Variation $item Variation information. (required)
+     * @return Array of \InventoryClient\Model\Response, HTTP status code, HTTP response headers (array of strings)
+     * @throws \InventoryClient\ApiException on non-2xx response
+     */
+    public function variationPostWithHttpInfo($id, $item)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling variationPost');
+        }
+        // verify the required parameter 'item' is set
+        if ($item === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $item when calling variationPost');
+        }
+        // parse inputs
+        $resourcePath = "/variation/";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array());
+
+        // query params
+        if ($id !== null) {
+            $queryParams['id'] = $this->apiClient->getSerializer()->toQueryValue($id);
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        // body params
+        $_tempBody = null;
+        if (isset($item)) {
+            $_tempBody = $item;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('APIKey');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['APIKey'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('accountid');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['accountid'] = $apiKey;
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\InventoryClient\Model\Response',
+                '/variation/'
+            );
+
+            return array($this->apiClient->getSerializer()->deserialize($response, '\InventoryClient\Model\Response', $httpHeader), $statusCode, $httpHeader);
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                default:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\InventoryClient\Model\Error', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation variationPut
+     *
+     * 
+     *
+     * @param string $id variation id to update. (required)
+     * @param \InventoryClient\Model\Variation $item New variation information. (required)
+     * @return \InventoryClient\Model\Response
+     * @throws \InventoryClient\ApiException on non-2xx response
+     */
+    public function variationPut($id, $item)
+    {
+        list($response) = $this->variationPutWithHttpInfo($id, $item);
+        return $response;
+    }
+
+    /**
+     * Operation variationPutWithHttpInfo
+     *
+     * 
+     *
+     * @param string $id variation id to update. (required)
+     * @param \InventoryClient\Model\Variation $item New variation information. (required)
+     * @return Array of \InventoryClient\Model\Response, HTTP status code, HTTP response headers (array of strings)
+     * @throws \InventoryClient\ApiException on non-2xx response
+     */
+    public function variationPutWithHttpInfo($id, $item)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling variationPut');
+        }
+        // verify the required parameter 'item' is set
+        if ($item === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $item when calling variationPut');
+        }
+        // parse inputs
+        $resourcePath = "/variation/";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array());
+
+        // query params
+        if ($id !== null) {
+            $queryParams['id'] = $this->apiClient->getSerializer()->toQueryValue($id);
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        // body params
+        $_tempBody = null;
+        if (isset($item)) {
+            $_tempBody = $item;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('APIKey');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['APIKey'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('accountid');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['accountid'] = $apiKey;
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'PUT',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\InventoryClient\Model\Response',
+                '/variation/'
             );
 
             return array($this->apiClient->getSerializer()->deserialize($response, '\InventoryClient\Model\Response', $httpHeader), $statusCode, $httpHeader);

@@ -1,6 +1,6 @@
 <?php
 /**
- * EventRequest
+ * Variation
  *
  * PHP version 5
  *
@@ -44,7 +44,7 @@ namespace InventoryClient\Model;
 use \ArrayAccess;
 
 /**
- * EventRequest Class Doc Comment
+ * Variation Class Doc Comment
  *
  * @category    Class */
 /** 
@@ -53,22 +53,22 @@ use \ArrayAccess;
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class EventRequest implements ArrayAccess
+class Variation implements ArrayAccess
 {
     /**
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'EventRequest';
+    protected static $swaggerModelName = 'Variation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = array(
-        'url' => 'string',
-        'serviceid' => 'string',
-        'postbody' => 'string'
+        'name' => 'string',
+        'price_change' => 'float',
+        'id' => 'string'
     );
 
     public static function swaggerTypes()
@@ -81,9 +81,9 @@ class EventRequest implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = array(
-        'url' => 'url',
-        'serviceid' => 'serviceid',
-        'postbody' => 'postbody'
+        'name' => 'name',
+        'price_change' => 'priceChange',
+        'id' => 'id'
     );
 
     public static function attributeMap()
@@ -96,9 +96,9 @@ class EventRequest implements ArrayAccess
      * @var string[]
      */
     protected static $setters = array(
-        'url' => 'setUrl',
-        'serviceid' => 'setServiceid',
-        'postbody' => 'setPostbody'
+        'name' => 'setName',
+        'price_change' => 'setPriceChange',
+        'id' => 'setId'
     );
 
     public static function setters()
@@ -111,9 +111,9 @@ class EventRequest implements ArrayAccess
      * @var string[]
      */
     protected static $getters = array(
-        'url' => 'getUrl',
-        'serviceid' => 'getServiceid',
-        'postbody' => 'getPostbody'
+        'name' => 'getName',
+        'price_change' => 'getPriceChange',
+        'id' => 'getId'
     );
 
     public static function getters()
@@ -137,9 +137,9 @@ class EventRequest implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
-        $this->container['serviceid'] = isset($data['serviceid']) ? $data['serviceid'] : null;
-        $this->container['postbody'] = isset($data['postbody']) ? $data['postbody'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['price_change'] = isset($data['price_change']) ? $data['price_change'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
     }
 
     /**
@@ -166,64 +166,64 @@ class EventRequest implements ArrayAccess
 
 
     /**
-     * Gets url
+     * Gets name
      * @return string
      */
-    public function getUrl()
+    public function getName()
     {
-        return $this->container['url'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets url
-     * @param string $url URL for the server to request on successful subscription to specified service
+     * Sets name
+     * @param string $name Variation name
      * @return $this
      */
-    public function setUrl($url)
+    public function setName($name)
     {
-        $this->container['url'] = $url;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets serviceid
-     * @return string
+     * Gets price_change
+     * @return float
      */
-    public function getServiceid()
+    public function getPriceChange()
     {
-        return $this->container['serviceid'];
+        return $this->container['price_change'];
     }
 
     /**
-     * Sets serviceid
-     * @param string $serviceid ServiceID to bind event to.
+     * Sets price_change
+     * @param float $price_change New price to set if variation is set (in hundreds)
      * @return $this
      */
-    public function setServiceid($serviceid)
+    public function setPriceChange($price_change)
     {
-        $this->container['serviceid'] = $serviceid;
+        $this->container['price_change'] = $price_change;
 
         return $this;
     }
 
     /**
-     * Gets postbody
+     * Gets id
      * @return string
      */
-    public function getPostbody()
+    public function getId()
     {
-        return $this->container['postbody'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets postbody
-     * @param string $postbody Valid JSON of Key-value parameters to post to url
+     * Sets id
+     * @param string $id System ID of variation
      * @return $this
      */
-    public function setPostbody($postbody)
+    public function setId($id)
     {
-        $this->container['postbody'] = $postbody;
+        $this->container['id'] = $id;
 
         return $this;
     }

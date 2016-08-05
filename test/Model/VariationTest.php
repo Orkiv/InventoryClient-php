@@ -1,6 +1,6 @@
 <?php
 /**
- * ItemTest
+ * VariationTest
  *
  * PHP version 5
  *
@@ -42,17 +42,17 @@
 namespace InventoryClient;
 
 /**
- * ItemTest Class Doc Comment
+ * VariationTest Class Doc Comment
  *
  * @category    Class */
-// * @description Item
+// * @description Variation
 /**
  * @package     InventoryClient
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ItemTest extends \PHPUnit_Framework_TestCase
+class VariationTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -88,33 +88,9 @@ class ItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "Item"
+     * Test "Variation"
      */
-    public function testItem()
-    {
-
-    }
-
-    /**
-     * Test attribute "id"
-     */
-    public function testPropertyId()
-    {
-
-    }
-
-    /**
-     * Test attribute "category"
-     */
-    public function testPropertyCategory()
-    {
-
-    }
-
-    /**
-     * Test attribute "desc"
-     */
-    public function testPropertyDesc()
+    public function testVariation()
     {
 
     }
@@ -128,49 +104,17 @@ class ItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "ordprice"
+     * Test attribute "price_change"
      */
-    public function testPropertyOrdprice()
+    public function testPropertyPriceChange()
     {
 
     }
 
     /**
-     * Test attribute "price"
+     * Test attribute "id"
      */
-    public function testPropertyPrice()
-    {
-
-    }
-
-    /**
-     * Test attribute "variations"
-     */
-    public function testPropertyVariations()
-    {
-
-    }
-
-    /**
-     * Test attribute "quantity"
-     */
-    public function testPropertyQuantity()
-    {
-
-    }
-
-    /**
-     * Test attribute "media"
-     */
-    public function testPropertyMedia()
-    {
-
-    }
-
-    /**
-     * Test attribute "buy"
-     */
-    public function testPropertyBuy()
+    public function testPropertyId()
     {
 
     }
